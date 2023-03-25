@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>문항 페이지</title>
+	<meta charset="utf-8">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    input[type="submit"] {
+      display: block;
+      margin-top: 20px;
+      background-color: #1abc9c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+    }
+    .answer {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+
+
+	#slider {
+	  width: 100%;
+	  overflow: hidden;
+	}
+
+	#slider fieldset {
+	  width: 100%;
+	  display: none;
+	}
+
+	#slider fieldset:first-child {
+	  display: block;
+	}
+
+	.prev, .next {
+	  z-index: 1;
+	  font-size: 100px;
+	  font-weight: bold;
+	  color: white;
+	  background-color: rgba(0, 0, 0, 0.5);
+	  border: none;
+	  outline: none;
+	  cursor: pointer;
+	  width: 49%;
+	}
+
+	.prev {
+	  left: 0;
+	}
+
+	.next {
+	  right: 0;
+	}
+
+
+	legend{
+		font-size: xxx-large;
+	}
+
+	label{
+		font-size: xx-large;
+	}
+
+  </style>
+</head>
+<body>
+	<h1>문항 페이지</h1>
+
+	<form>
+
+		<div id="slider">
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q1. 전자 상거래 회사는 AWS 클라우드에서 분석 애플리케이션을 호스팅합니다.</legend></br>
+			<label>
+				<input type="checkbox" name="q1[]" value="A"> A. Amazon OpenSearch Service(Amazon Elasticsearch Service)</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q1[]" value="B"> B. Amazon S3 Glacier</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q1[]" value="C"> C. Amazon S3 Standard</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q1[]" value="D"> D. PostgreSQL용 Amazon RDS</br>
+			</label>
+		</fieldset>
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q2. 회사는 AWS에서 호스팅되는 서비스 솔루션으로 고성능 컴퓨팅(HPC) 워크로드를 구축할 계획입니다. 16개의 Amazon EC2 Linux 인스턴스 그룹에는 노드 간 통신에 가장 낮은 지연 시간이 필요합니다. 인스턴스에는 고성능 스토리지를 위한 공유 블록 장치 볼륨도 필요합니다. 어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+			<label>
+				<input type="checkbox" name="q2[]" value="A"> A. 클러스터 배치 그룹을 사용합니다. Amazon EBS 다중 연결을 사용하여 단일 프로비저닝된 IOPS SSD Amazon Elastic Block Store(Amazon EBS) 볼륨을 모든 인스턴스에 연결합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q2[]" value="B"> B. 클러스터 배치 그룹을 사용합니다. Amazon Elastic File System(Amazon EFS)을 사용하여 인스턴스 간에 공유 파일 시스템을 생성합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q2[]" value="C"> C. 파티션 배치 그룹을 사용합니다. Amazon Elastic File System(Amazon EFS)을 사용하여 인스턴스 간에 공유 파일 시스템을 생성합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q2[]" value="D"> D. 스프레드 배치 그룹을 사용합니다. Amazon EBS 다중 연결을 사용하여 단일 프로비저닝된 IOPS SSD Amazon Elastic Block Store(Amazon EBS) 볼륨을 모든 인스턴스에 연결합니다.</br>
+			</label>
+		</fieldset>
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q3. 회사는 동일한 AWS 리전에 있는 Amazon S3 버킷에서 사진을 자주 업로드 및 다운로드해야 하는 사진 처리 애플리케이션을 실행합니다. 솔루션 설계자는 데이터 전송 비용이 증가하는 것을 발견하고 이러한 비용을 줄이기 위한 솔루션을 구현해야 합니다. 솔루션 아키텍트가 이 요구 사항을 충족할 수 있습니까?</legend></br></br>
+			<label>
+				<input type="checkbox" name="q3[]" value="A"> A. Amazon API Gateway를 퍼블릭 서브넷에 배포하고 이를 통해 S3 호출을 라우팅하도록 라우팅 테이블을 조정합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q3[]" value="B"> B. NAT 게이트웨이를 퍼블릭 서브넷에 배포하고 S3 버킷에 대한 액세스를 허용하는 엔드포인트 정책을 연결합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q3[]" value="C"> C. 애플리케이션을 퍼블릭 서브넷에 배포하고 S3 버킷에 액세스하기 위해 인터넷 게이트웨이를 통해 라우팅하도록 허용</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q3[]" value="D"> D. S3 VPC 게이트웨이 엔드포인트를 VPC에 배포하고 S3 버킷에 대한 액세스를 허용하는 엔드포인트 정책을 연결합니다.</br>
+			</label>
+		</fieldset>
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q4. 회사는 Application Load Balancer 뒤의 Amazon EC2 온디맨드 인스턴스 그룹에서 프로덕션 환경에서 상태 비저장 웹 애플리케이션을 실행합니다. 매일 8시간 동안 애플리케이션 사용량이 많습니다. 응용 프로그램 사용량은 보통이고 밤새 안정적입니다. 주말에는 애플리케이션 사용량이 적습니다. 이 회사는 애플리케이션의 가용성에 영향을 주지 않으면서 EC2 비용을 최소화하려고 합니다. 어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+			<label>
+				<input type="checkbox" name="q4[]" value="A"> A. 전체 워크로드에 대해 스팟 인스턴스를 사용합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q4[]" value="B"> B. 기본 사용량 수준에 대해 예약 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 스팟 인스턴스를 사용합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q4[]" value="C"> C. 기준 사용 수준에 대해 온디맨드 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 스팟 인스턴스를 사용합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q4[]" value="D"> D. 기본 사용량 수준에 대해 전용 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 온디맨드 인스턴스를 사용합니다.</br>
+			</label>
+		</fieldset>
+
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q5. 회사의 HTTP 애플리케이션은 NLB(Network Load Balancer) 뒤에 있습니다. NLB의 대상 그룹은 웹 서비스를 실행하는 여러 EC2 인스턴스와 함께 Amazon EC2 Auto Scaling 그룹을 사용하도록 구성됩니다. 회사는 NLB가 애플리케이션에 대한 HTTP 오류를 감지하지 못한다는 것을 알게 되었습니다. 이러한 오류는 웹 서비스를 실행하는 EC2 인스턴스를 수동으로 다시 시작해야 합니다. 회사는 사용자 정의 스크립트나 코드를 작성하지 않고 애플리케이션의 가용성을 개선해야 합니다. 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+			<label>
+				<input type="checkbox" name="q5[]" value="A"> A. NLB에서 HTTP 상태 확인을 활성화하고 회사 응용 프로그램의 URL을 제공합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q5[]" value="B"> B. EC2 인스턴스에 cron 작업을 추가하여 1분에 한 번씩 로컬 애플리케이션의 로그를 확인합니다. HTTP 오류가 감지되면 애플리케이션이 다시 시작됩니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q5[]" value="C"> C. NLB를 Application Load Balancer로 교체합니다. 회사 애플리케이션의 URL을 제공하여 HTTP 상태 확인을 활성화합니다. 비정상 인스턴스를 교체하도록 Auto Scaling 작업을 구성합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q5[]" value="D"> D. NLB에 대한 UnhealthyHostCount 지표를 모니터링하는 Amazon CloudWatch 경보를 생성합니다. 경보가 ALARM 상태일 때 비정상 인스턴스를 교체하도록 Auto Scaling 작업을 구성합니다.</br>
+			</label>
+		</fieldset>
+
+
+
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q6. 회사에 들어오는 메시지를 수집하는 응용 프로그램이 있습니다. 그런 다음 이러한 메시지는 수십 개의 다른 애플리케이션과 마이크로서비스에서 빠르게 사용됩니다. 메시지 수는 매우 다양하며 때로는 초당 최대 100,000개까지 급증합니다. 이 회사는 솔루션을 분리하고 확장성을 높이고자 합니다.
+					어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+			<label>
+				<input type="checkbox" name="q6[]" value="A"> A. Amazon Kinesis Data Analytics에 대한 메시지를 유지합니다. 모든 응용 프로그램은 메시지를 읽고 처리합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q6[]" value="B"> B. CPU 지표를 기반으로 EC2 인스턴스 수를 조정하는 Auto Scaling 그룹의 Amazon EC2 인스턴스에 애플리케이션을 배포합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q6[]" value="C"> C. 단일 샤드를 사용하여 Amazon Kinesis Data Streams에 메시지를 씁니다. 모든 애플리케이션은 스트림에서 읽고 메시지를 처리합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q6[]" value="D"> D. 하나 이상의 Amazon Simple Queue Service(Amazon SQS) 구독이 있는 Amazon Simple Notification Service(Amazon SNS) 주제에 메시지를 게시합니다. 그러면 모든 애플리케이션이 대기열의 메시지를 처리합니다</br>
+			</label>
+		</fieldset>
+
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q7. 회사에서 응용 프로그램을 설계하고 있습니다. 애플리케이션은 AWS Lambda 함수를 사용하여 Amazon API Gateway를 통해 정보를 수신하고 Amazon Aurora PostgreSQL 데이터베이스에 정보를 저장합니다. 개념 증명 단계에서 회사는 데이터베이스에 로드해야 하는 대용량 데이터를 처리하기 위해 Lambda 할당량을 크게 늘려야 합니다. 솔루션 설계자는 확장성을 개선하고 구성 노력을 최소화하기 위해 새로운 설계를 권장해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+			<label>
+				<input type="checkbox" name="q7[]" value="A"> A. Lambda 함수 코드를 Amazon EC2 인스턴스에서 실행되는 Apache Tomcat 코드로 리팩터링합니다. 네이티브 JDBC(Java Database Connectivity) 드라이버를 사용하여 데이터베이스를 연결합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q7[]" value="B"> B. 플랫폼을 Aurora에서 Amazon DynamoDB로 변경합니다. DynamoDB Accelerator(DAX) 클러스터를 프로비저닝합니다. DAX 클라이언트 SDK를 사용하여 DAX 클러스터에서 기존 DynamoDB API 호출을 가리킵니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q7[]" value="C"> C. 두 개의 Lambda 함수를 설정합니다. 정보를 수신할 하나의 기능을 구성하십시오. 정보를 데이터베이스에 로드하도록 다른 기능을 구성하십시오. Amazon Simple Notification Service(Amazon SNS)를 사용하여 Lambda 함수를 통합합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q7[]" value="D"> D. 두 개의 Lambda 함수를 설정합니다. 정보를 수신할 하나의 기능을 구성하십시오. 정보를 데이터베이스에 로드하도록 다른 기능을 구성하십시오. Amazon Simple Queue Service(Amazon SQS) 대기열을 사용하여 Lambda 함수를 통합합니다.</br>
+			</label>
+		</fieldset>
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q8. 회사는 Amazon API Gateway API에 의해 호출되는 AWS Lambda 함수에서 애플리케이션을 호스팅합니다. Lambda 함수는 고객 데이터를 Amazon Aurora MySQL 데이터베이스에 저장합니다. 회사에서 데이터베이스를 업그레이드할 때마다 Lambda 함수는 업그레이드가 완료될 때까지 데이터베이스 연결을 설정하지 못합니다. 그 결과 일부 이벤트에 대한 고객 데이터가 기록되지 않습니다. 솔루션 설계자는 데이터베이스 업그레이드 중에 생성되는 고객 데이터를 저장하는 솔루션을 설계해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+			<label>
+				<input type="checkbox" name="q8[]" value="A"> A. Lambda 함수와 데이터베이스 사이에 위치하도록 Amazon RDS 프록시를 프로비저닝합니다. RDS 프록시에 연결하도록 Lambda 함수를 구성합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q8[]" value="B"> B. Lambda 함수의 실행 시간을 최대로 늘립니다. 데이터베이스에 고객 데이터를 저장하는 코드에서 재시도 메커니즘을 만듭니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q8[]" value="C"> C. 고객 데이터를 Lambda 로컬 스토리지에 유지합니다. 고객 데이터를 데이터베이스에 저장하기 위해 로컬 스토리지를 스캔하도록 새로운 Lambda 함수를 구성합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q8[]" value="D"> D. Amazon Simple Queue Service(Amazon SQS) FIFO 대기열에 고객 데이터를 저장합니다. 대기열을 폴링하고 고객 데이터를 데이터베이스에 저장하는 새 Lambda 함수를 생성합니다.</br>
+			</label>
+		</fieldset>
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q9. 회사에서 온프레미스에서 다중 계층 웹 애플리케이션을 실행하고 있습니다. 웹 애플리케이션은 컨테이너화되어 있으며 사용자 레코드가 포함된 PostgreSQL 데이터베이스에 연결된 여러 Linux 호스트에서 실행됩니다. 인프라 및 용량 계획을 유지 관리하는 운영 오버헤드가 회사의 성장을 제한하고 있습니다. 솔루션 설계자는 애플리케이션의 인프라를 개선해야 합니다.
+솔루션 설계자는 이를 달성하기 위해 어떤 조합의 조치를 취해야 합니까? (2개를 선택하세요.)</legend></br>
+			<label>
+				<input type="checkbox" name="q9[]" value="A"> A. PostgreSQL 데이터베이스를 Amazon Aurora로 마이그레이션합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q9[]" value="B"> B. Amazon EC2 인스턴스에서 호스팅할 웹 애플리케이션을 마이그레이션합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q9[]" value="C"> C. 웹 애플리케이션 콘텐츠에 대한 Amazon CloudFront 배포를 설정합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q9[]" value="D"> D. 웹 애플리케이션과 PostgreSQL 데이터베이스 간에 Amazon ElastiCache를 설정합니다.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q9[]" value="E"> E. Amazon Elastic Container Service(Amazon ECS)를 사용하여 AWS Fargate에서 호스팅할 웹 애플리케이션을 마이그레이션합니다.</br>
+			</label>
+		</fieldset>
+
+
+		<fieldset class="answer">
+			<legend class="text-justify">Q10. 회사는 재무 위험 모델링을 위해 AWS에서 고성능 컴퓨팅(HPC) 인프라를 사용하려고 합니다. 회사의 HPC 워크로드는 Linux에서 실행됩니다. 각 HPC 워크플로는 수백 개의 AmazonEC2 스팟 인스턴스에서 실행되고, 수명이 짧으며, 궁극적으로 분석 및 장기적 미래 사용을 위해 영구 스토리지에 저장되는 수천 개의 출력 파일을 생성합니다. 이 회사는 온프레미스 데이터를 장기 영구 스토리지에 복사하여 모든 EC2 인스턴스에서 데이터를 처리할 수 있도록 하는 클라우드 스토리지 솔루션을 찾고 있습니다. 솔루션은 또한 데이터 세트 및 출력 파일을 읽고 쓰기 위해 영구 저장소와 통합되는 고성능 파일 시스템이어야 합니다.
+이러한 요구 사항을 충족하는 AWS 서비스 조합은 무엇입니까?</legend></br>
+			<label>
+				<input type="checkbox" name="q10[]" value="A"> A. Amazon S3와 통합된 Lustre용 Amazon FSx.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q10[]" value="B"> B. Amazon S3와 통합된 Windows 파일 서버용 Amazon FSx.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q10[]" value="C"> C. Amazon Elastic Block Store(Amazon EBS)와 통합된 Amazon S3 Glacier.</br>
+			</label>
+			<label>
+				<input type="checkbox" name="q10[]" value="D"> D. Amazon Elastic Block Store(Amazon EBS) 범용 SSD(gp2) 볼륨과 통합된 VPC 엔드포인트가 있는 Amazon S3 버킷.</br>
+			</label>
+		</fieldset>		
+
+
+
+		<fieldset class="answer">
+		    <legend class="text-justify">Q11. 회사에 AWS Glue 추출이 있습니다. 매일 같은 시간에 실행되는 변환 및 로드(ETL) 작업. 작업은 Amazon S3 버킷에 있는 XML 데이터를 처리합니다. 매일 새로운 데이터가 S3 버킷에 추가됩니다. 솔루션 설계자는 AWS Glue가 각 실행 중에 모든 데이터를 처리하고 있음을 알아차렸습니다. 솔루션 아키텍트는 AWS Glue가 오래된 데이터를 재처리하지 못하도록 하려면 어떻게 해야 합니까?</legend></br>
+		    <label>
+		        <input type="checkbox" name="q11[]" value="A"> A. 작업 북마크를 사용하도록 작업을 편집합니다.<br>
+		    </label>
+		    <label>
+		        <input type="checkbox" name="q11[]" value="B"> B. 데이터 처리 후 데이터 삭제 작업 편집 <br>
+		    </label>
+		    <label>
+		        <input type="checkbox" name="q11[]" value="C"> C. NumberOfWorkers 필드를 1로 설정하여 작업을 편집합니다.<br>
+		    </label>
+		    <label>
+		        <input type="checkbox" name="q11[]" value="D"> D. FindMatches 기계 학습(ML) 변환을 사용합니다.<br>
+		    </label>
+		</fieldset>		
+
+
+
+
+		<fieldset class="answer">
+		  <legend class="text-justify">Q12. 회사는 AWS에서 다중 계층 애플리케이션을 호스팅합니다. 규정 준수, 거버넌스, 감사 및 보안을 위해 회사는 AWS 리소스 및 이러한 리소스에 대한 API 호출 기록을 기록합니다. 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+		  <label>
+		    <input type="checkbox" name="q12[]" value="A">
+		    A. AWS CloudTrail을 사용하여 구성 변경을 추적하고 AWS Config를 사용하여 API 호출을 기록하십시오.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q12[]" value="B">
+		    B. AWS Config를 사용하여 구성 변경을 추적하고 AWS CloudTrail을 사용하여 API 호출을 기록합니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q12[]" value="C">
+		    C. AWS Config를 사용하여 구성 변경을 추적하고 Amazon CloudWatch를 사용하여 API 호출을 기록합니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q12[]" value="D">
+		    D. AWS CloudTrail을 사용하여 구성 변경을 추적하고 Amazon CloudWatch를 사용하여 API 호출을 기록합니다.<br>
+		  </label>
+		</fieldset>
+
+				
+
+		<fieldset class="answer">
+		  <legend class="text-justify">Q13. 회사의 응용 프로그램에 성능 문제가 있습니다. 애플리케이션은 스테이트풀(Stateful)이며 Amazon EC2 인스턴스에서 m-메모리 작업을 완료해야 합니다. 이 회사는 AWS CloudFormation을 사용하여 인프라를 배포하고 M5 EC2 인스턴스 제품군을 사용했습니다. 트래픽이 증가함에 따라 애플리케이션 성능이 저하됨 사용자가 애플리케이션에 액세스를 시도할 때 지연을 보고합니다.
+어떤 솔루션이 운영상 가장 효율적인 방식으로 이러한 문제를 해결할 것입니까?
+</legend></br>
+		  
+		  <label>
+		    <input type="checkbox" name="q13[]" value="A">
+		    A. EC2 인스턴스를 Auto Scaling 그룹에서 실행되는 T3 EC2 인스턴스로 교체합니다. AWS Management 콘솔을 사용하여 변경했습니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q13[]" value="B">
+		    B. Auto Scaling 그룹에서 EC2 인스턴스를 실행하도록 CloudFormation 템플릿을 수정합니다. 증가가 필요한 경우 Auto Scaling 그룹의 원하는 용량과 최대 용량을 수동으로 늘립니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q13[]" value="C">
+		    C. CloudFormation 템플릿을 수정합니다. EC2 인스턴스를 R5 EC2 인스턴스로 교체합니다. Amazon CloudWatch 내장 EC2 메모리 지표를 사용하여 향후 용량 계획을 위한 애플리케이션 성능을 추적합니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q13[]" value="D">
+		    D. CloudFormation 템플릿을 수정합니다. EC2 인스턴스를 R5 EC2 인스턴스로 교체합니다. EC2 인스턴스에 Amazon CloudWatch 에이전트를 배포하여 향후 용량 계획을 위한 사용자 지정 애플리케이션 지연 측정치를 생성합니다.<br>
+		  </label>
+		</fieldset>
+
+
+
+
+		<fieldset class="answer">
+		  <legend class="">Q14. 회사는 Application Load Balancer 뒤의 Amazon EC2 인스턴스에서 전자 상거래 애플리케이션을 실행합니다. 인스턴스는 여러 가용 영역에 걸쳐 Amazon EC2 Auto Scaling 그룹에서 실행됩니다. Auto Scaling 그룹은 CPU 사용률 메트릭을 기반으로 확장됩니다. 전자 상거래 애플리케이션은 대규모 EC2 인스턴스에서 호스팅되는 MySQL 8.0 데이터베이스에 트랜잭션 데이터를 저장합니다.
+			애플리케이션 로드가 증가하면 데이터베이스의 성능이 빠르게 저하됩니다. 애플리케이션은 쓰기 트랜잭션보다 더 많은 읽기 요청을 처리합니다. 이 회사는 고가용성을 유지하면서 예측할 수 없는 읽기 워크로드의 수요를 충족하도록 데이터베이스를 자동으로 확장하는 솔루션을 원합니다.
+			어떤 솔루션이 이러한 요구 사항을 충족합니까?
+			</legend></br>
+		  
+		  <label>
+		    <input type="checkbox" name="q14[]" value="A">A. 리더 및 컴퓨팅 기능을 위해 단일 노드와 함께 Amazon Redshift를 사용하십시오.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q14[]" value="B">B. 단일 AZ 배포와 함께 Amazon RDS 사용 다른 가용 영역에 리더 인스턴스를 추가하도록 Amazon RDS를 구성합니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q14[]" value="C">
+		    C. 다중 AZ 배포와 함께 Amazon Aurora를 사용합니다. Aurora 복제본을 사용하여 Aurora Auto Scaling을 구성합니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q14[]" value="D">
+		    D. EC2 스팟 인스턴스와 함께 Memcached용 Amazon ElastiCache를 사용합니다. <br>
+		  </label>
+		</fieldset>
+
+
+
+		<fieldset class="answer">
+		  <legend class="text-justify">Q15. 회사는 온프레미스에서 실행되는 Windows 파일 서버에 5TB 이상의 파일 데이터를 가지고 있습니다. 사용자와 애플리케이션은 매일 데이터와 상호 작용합니다. 이 회사는 Windows 워크로드를 AWS로 이전하고 있습니다. 회사가 이 프로세스를 계속함에 따라 회사는 최소 지연 시간으로 AWS 및 온프레미스 파일 스토리지에 액세스할 수 있어야 합니다. 회사는 운영 오버헤드를 최소화하고 기존 파일 액세스 패턴을 크게 변경할 필요가 없는 솔루션이 필요합니다. 회사는 AWS 연결을 위해 AWS Site-to-Site VPN 연결을 사용합니다.
+솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+		  
+		  <label>
+		    <input type="checkbox" name="q15[]" value="A">A. AWS에서 Windows 파일 서버용 Amazon FSx를 배포 및 구성합니다. 온-프레미스 파일 데이터를 Windows 파일 서버용 FSx로 이동합니다. AWS에서 Windows 파일 서버용 FSx를 사용하도록 워크로드를 재구성합니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q15[]" value="B">B. Amazon S3 파일 게이트웨이 온프레미스 배포 및 구성 온프레미스 파일 데이터를 S3 파일 게이트웨이로 이동 S3 파일 게이트웨이를 사용하도록 온프레미스 워크로드와 클라우드 워크로드를 재구성합니다.<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q15[]" value="C">C. 온프레미스에 Amazon S3 파일 게이트웨이 배포 및 구성 온프레미스 파일 데이터를 Amazon S3로 이동 각 워크로드의 위치에 따라 Amazon S3를 직접 사용하거나 S3 파일 게이트웨이를 사용하도록 워크로드를 재구성합니다<br>
+		  </label>
+		  
+		  <label>
+		    <input type="checkbox" name="q15[]" value="D">D. AWS에서 Windows 파일 서버용 Amazon FSx 배포 및 구성 Amazon FSx 파일 게이트웨이를 온프레미스로 배포 및 구성합니다. 온프레미스 파일 데이터를 FSx 파일 게이트웨이로 이동합니다. AWS의 Windows 파일 서버용 FSx를 사용하도록 클라우드 워크로드를 구성합니다. FSx 파일 게이트웨이를 사용하도록 온프레미스 워크로드를 구성합니다<br>
+		  </label>
+		</fieldset>
+
+
+
+		<fieldset class="answer">		
+		<legend class="text-justify">Q16. 회사에서 Amazon S3에 기밀 데이터를 저장할 준비를 하고 있습니다. 규정 준수를 위해 미사용 데이터를 암호화해야 합니다. 암호화 키 사용은 감사 목적으로 기록되어야 합니다. 키는 매년 순환해야 합니다. 어떤 솔루션이 이러한 요구 사항을 충족하고 운영상 가장 효율적입니까?	</legend></br>
+		<label><input type="checkbox" name="q16[]" value="A">	A. 고객 제공 키를 사용한 서버 측 암호화(SSE-C)	<br></label>
+		<label><input type="checkbox" name="q16[]" value="B">	B. Amazon S3 관리형 키를 사용한 서버 측 암호화(SSE-S3)	<br></label>
+		<label><input type="checkbox" name="q16[]" value="C">	C. 수동 교체가 있는 AWS KMS(SSE-KMS) 고객 마스터 키(CMK)를 사용한 서버 측 암호화	<br></label>
+		<label><input type="checkbox" name="q16[]" value="D">	D. 자동 교체 기능이 있는 AWS KMS(SSE-KMS) 고객 마스터 키(CMK)를 사용한 서버 측 암호화	<br></label>
+		</fieldset>		
+
+
+		<fieldset class="answer">				
+<legend class="text-justify">	Q17. 솔루션 설계자는 2계층 웹 애플리케이션을 설계하고 있습니다. 애플리케이션은 퍼블릭 서브넷의 Amazon EC2에서 호스팅되는 퍼블릭 웹 티어로 구성됩니다. 데이터베이스 계층은 프라이빗 서브넷의 Amazon EC2에서 실행되는 Microsoft SQL Server로 구성됩니다. 보안은 회사의 최우선 과제입니다.이 상황에서 보안 그룹을 어떻게 구성해야 합니까? (2개를 선택하세요.)	</legend></br>		
+<label><input type="checkbox" name="q17[]" value="A">	A. 0.0.0.0/0에서 포트 443의 인바운드 트래픽을 허용하도록 웹 계층에 대한 보안 그룹을 구성합니다.	<br></label>		
+<label><input type="checkbox" name="q17[]" value="B">	B. 0.0.0.0/0에서 포트 443의 아웃바운드 트래픽을 허용하도록 웹 계층에 대한 보안 그룹을 구성합니다.	<br></label>		
+<label><input type="checkbox" name="q17[]" value="C">	C. 웹 계층에 대한 보안 그룹에서 포트 1433의 인바운드 트래픽을 허용하도록 데이터베이스 계층에 대한 보안 그룹을 구성합니다.	<br></label>		
+<label><input type="checkbox" name="q17[]" value="D">	D. 데이터베이스 계층에 대한 보안 그룹을 구성하여 포트 443 및 1433의 아웃바운드 트래픽을 웹 계층의 보안 그룹으로 전달합니다.	<br></label>		
+<label><input type="checkbox" name="q17[]" value="E">	E. 웹 계층에 대한 보안 그룹의 포트 443 및 1433에서 인바운드 트래픽을 허용하도록 데이터베이스 계층에 대한 보안 그룹을 구성합니다.			
+</fieldset>
+
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q18. 텔레마케팅 회사는 AWS에서 고객 콜 센터 기능을 설계하고 있습니다. 회사는 다중 ipsafcar 인식을 제공하고 스크립트 파일을 생성하는 솔루션 다이어트가 필요합니다. 회사는 성적표 파일을 쿼리하여 비즈니스 패턴을 분석하려고 합니다. 성적표 파일은 필로스 감사를 위해 7년 동안 보관해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q18[]" value="A">	A. 다중 화자 인식을 위해 Amazon Rekognition을 사용합니다. Amazon S3에 기록 파일 저장 기록 파일 분석을 위해 기계 팀 구성 모델을 사용합니다.	<br></label>
+<label><input type="checkbox" name="q18[]" value="B">	B. 다중 화자 인식을 위해 Amazon Transcribe를 사용합니다. 성적표 파일 분석가를 위해 Amazon Athena를 사용하십시오.	<br></label>
+<label><input type="checkbox" name="q18[]" value="C">	C. Amazon Translate 또는 다중 화자 인식을 사용합니다. Amazon Redshift에 스크립트 파일을 저장합니다. SQL 대기열 또는 스크립트 파일 분석을 사용합니다.	<br></label>
+<label><input type="checkbox" name="q18[]" value="D">	D. 다중 화자 인식을 위해 Amazon Rekognition을 사용합니다. Amazon S3에 스크립트 파일을 저장합니다. 스크립트 파일 분석에 Amazon Textract를 사용하십시오.	<br></label>
+</fieldset>		
+		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q19. 
+회사는 데이터 센터에서 SMB 파일 서버를 실행하고 있습니다. 파일 서버는 파일이 생성된 후 처음 며칠 동안 자주 액세스하는 대용량 파일을 저장합니다. 7일이 지나면 파일에 거의 액세스하지 않습니다. 총 데이터 크기가 증가하고 있으며 회사의 총 저장 용량에 가깝습니다. 솔루션 설계자는 가장 최근에 액세스한 파일에 대한 저지연 액세스를 잃지 않으면서 회사의 사용 가능한 저장 공간을 늘려야 합니다. 솔루션 설계자는 향후 스토리지 문제를 방지하기 위해 파일 수명 주기 관리도 제공해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q19[]" value="A">	A. AWS DataSync를 사용하여 SMB 파일 서버에서 AWS로 7일이 지난 데이터를 복사합니다.	<br></label>
+<label><input type="checkbox" name="q19[]" value="B">	B. Amazon S3 파일 게이트웨이를 생성하여 회사의 스토리지 공간을 확장합니다. S3 수명 주기 정책을 생성하여 7일 후에 데이터를 S3 Glacier Deep Archive로 전환합니다.	<br></label>
+<label><input type="checkbox" name="q19[]" value="C">	C. Windows 파일 서버용 Amazon FSx 파일 시스템을 생성하여 회사의 저장 공간을 확장합니다.	<br></label>
+<label><input type="checkbox" name="q19[]" value="D">	D. 각 사용자의 컴퓨터에 유틸리티를 설치하여 Amazon S3에 액세스합니다. S3 수명 주기 정책을 생성하여 7일 후 데이터를 S3 Glacier Flexible Retrieval로 전환합니다.	<br></label>
+</fieldset>		
+		
+		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q20. 
+한 회사에서 Amazon S3 버킷을 스토리지로 사용할 파일 공유 애플리케이션을 개발 중입니다. 회사는 Amazon CloudFront 배포를 통해 모든 파일을 제공하려고 합니다. 회사는 S3 URL에 대한 직접 탐색을 통해 파일에 액세스하는 것을 원하지 않습니다.
+솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q20[]" value="A">	A. 각 S3 버킷에 대한 개별 정책을 작성하여 CloudFront 액세스에 대해서만 읽기 권한을 부여합니다.	<br></label>
+<label><input type="checkbox" name="q20[]" value="B">	B. IAM 사용자를 생성합니다. 사용자에게 S3 버킷의 객체에 대한 읽기 권한을 부여합니다. 사용자를 CloudFront에 할당합니다.	<br></label>
+<label><input type="checkbox" name="q20[]" value="C">	C. CloudFront 배포 ID를 보안 주체로 할당하고 대상 S3 버킷을 Amazon 리소스 이름(ARN)으로 할당하는 S3 버킷 정책을 작성합니다.	<br></label>
+<label><input type="checkbox" name="q20[]" value="D">	D. 원본 액세스 ID(OAI)를 생성합니다. CloudFront 배포에 OAI를 할당합니다. OAI만 읽기 권한을 갖도록 S3 버킷 권한을 구성합니다.	<br></label>
+</fieldset>		
+
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q21. 회사는 보고를 위해 50TB의 데이터를 사용합니다. 회사는 이 데이터를 온프레미스에서 AWS로 이동하려고 합니다. 회사 데이터 센터의 사용자 지정 애플리케이션은 매주 데이터 변환 작업을 실행합니다. 회사는 데이터 이전이 완료되고 가능한 한 빨리 이전 프로세스를 시작해야 할 때까지 응용 프로그램을 일시 중지할 계획입니다. 데이터 센터에는 추가 워크로드에 사용할 수 있는 네트워크 대역폭이 없습니다. 솔루션 설계자는 데이터를 전송하고 AWS 클라우드에서 계속 실행되도록 변환 작업을 구성해야 합니다.
+최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q21[]" value="A">	A. AWS DataSync를 사용하여 데이터 이동 AWS Glue를 사용하여 사용자 지정 변환 작업을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q21[]" value="B">	B. 데이터를 이동하도록 AWS Snowcone 디바이스를 주문합니다. 변환 애플리케이션을 디바이스에 배포합니다.	<br></label>
+<label><input type="checkbox" name="q21[]" value="C">	C. AWS Snowball Edge Storage Optimized 장치를 주문합니다. 데이터를 장치에 복사합니다. AWS Glue를 사용하여 사용자 지정 변환 작업을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q21[]" value="D">	D. AWS 주문 D. Amazon EC2 컴퓨팅이 포함된 Snowball Edge Storage Optimized 디바이스에 데이터 복사 AWS에서 새 EC2 인스턴스를 생성하여 변환 애플리케이션을 실행합니다.	<br></label>
+</fieldset>		
+		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q22. 회사는 AWS에서 인프라를 실행하고 문서 관리 애플리케이션에 대해 700,000명의 등록된 사용자 기반을 보유하고 있습니다. 회사는 큰 .pdf 파일을 .jpg 이미지 파일로 변환하는 제품을 만들려고 합니다. .pdf 파일의 크기는 평균 5MB입니다. 회사는 원본 파일과 변환 파일을 보관해야 합니다. 솔루션 설계자는 시간이 지남에 따라 빠르게 증가할 수요를 수용할 수 있는 확장 가능한 솔루션을 설계해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 가장 비용 효율적으로 충족합니까?</legend></br>
+<label><input type="checkbox" name="q22[]" value="A">	A. pdf 파일을 Amazon S3에 저장합니다. AWS Lambda 함수를 호출하여 파일을 .jpg 형식으로 변환하고 Amazon S3에 다시 저장하도록 S3 PUT 이벤트를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q22[]" value="B">	B. pdf 파일을 Amazon DynamoDB에 저장합니다. DynamoDB 스트림 기능을 사용하여 AWS Lambda 함수를 호출하여 파일을 jpg 형식으로 변환하고 DynamoDB에 다시 저장합니다.	<br></label>
+<label><input type="checkbox" name="q22[]" value="C">	C. pdf 파일을 Amazon EC2 인스턴스가 포함된 AWS Elastic Beanstalk 애플리케이션에 업로드합니다. Amazon Elastic Block Store(Amazon EBS) 스토리지 및 Auto Scaling 그룹. EC2 인스턴스의 프로그램을 사용하여 파일을 jpg 형식으로 변환 EBS 스토어에 pdf 파일과 jpg 파일을 저장합니다.	<br></label>
+<label><input type="checkbox" name="q2[]" value="D">	D. Amazon EC2 인스턴스 Amazon Elastic File System(Amazon EFS) 스토리지 및 Auto Scaling 그룹이 포함된 AWS Elastic Beanstalk 애플리케이션에 PDF 파일을 업로드합니다. EC2 인스턴스의 프로그램을 사용하여 파일을 jpg 형식으로 변환 EBS 스토어에 pdf 파일과 jpg 파일을 저장합니다.	<br></label>
+</fieldset>		
+		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q23. 회사는 웹 사이트에서 검색 가능한 항목 저장소를 유지 관리합니다. 데이터는 천만 개 이상의 행이 포함된 Amazon RDS for MySQL 데이터베이스 테이블에 저장됩니다. 데이터베이스에는 2TB의 범용 SSD(gp2) 스토리지가 있습니다. 회사 웹 사이트를 통해 이 데이터에 대한 수백만 건의 업데이트가 매일 있습니다. 회사는 일부 작업이 10초 이상 걸리는 것을 발견하고 데이터베이스 스토리지 성능이 병목 현상이라고 판단했습니다.
+어떤 솔루션이 성능 문제를 해결합니까?	</legend></br>
+<label><input type="checkbox" name="q23[]" value="A">	A. 스토리지 유형을 프로비저닝된 IOPS SSD(io1)로 변경합니다.	<br></label>
+<label><input type="checkbox" name="q23[]" value="B">	B. 인스턴스를 메모리 최적화 인스턴스 클래스로 변경합니다.	<br></label>
+<label><input type="checkbox" name="q23[]" value="C">	C. 인스턴스를 버스트 가능한 성능 DB 인스턴스 클래스로 변경합니다.	<br></label>
+<label><input type="checkbox" name="q23[]" value="D">	D. MySQL 기본 비동기 복제로 다중 AZ RDS 읽기 전용 복제본을 활성화합니다.	<br></label>
+</fieldset>		
+		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q24. 회사는 최근 웹 공격으로 인해 공개 웹 응용 프로그램의 보안에 대해 우려하고 있습니다. 애플리케이션은 ALB(Application Load Balancer)를 사용합니다. 솔루션 설계자는 애플리케이션에 대한 DDoS 공격의 위험을 줄여야 합니다.
+솔루션 설계자는 이 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q24[]" value="A">	A. ALB에 Amazon Inspector 에이전트를 추가합니다.	<br></label>
+<label><input type="checkbox" name="q24[]" value="B">	B. 공격을 방지하도록 Amazon Macie를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q24[]" value="C">	C. 공격을 방지하기 위해 AWS Shield Advanced를 활성화합니다.	<br></label>
+<label><input type="checkbox" name="q24[]" value="D">	D. ALB를 모니터링하도록 Amazon GuardDuty를 구성합니다.	<br></label>
+</fieldset>		
+		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q25. 회사에서 최근 마케팅 캠페인의 효과를 측정하려고 합니다. 회사는 판매 데이터의 csv 파일에 대해 일괄 처리를 수행하고 그 결과를 1시간에 한 번씩 Amazon S3 버킷에 저장합니다. S3는 페타바이트 단위의 개체입니다. 이 회사는 Amazon Athena에서 일회성 쿼리를 실행하여 특정 지역의 특정 날짜에 가장 인기 있는 제품을 확인합니다. 쿼리가 실패하거나 완료되는 데 예상보다 오래 걸리는 경우가 있습니다.
+쿼리 성능과 안정성을 개선하기 위해 솔루션 설계자는 어떤 조치를 취해야 합니까? (2개를 선택하십시오.)</legend></br>
+<label><input type="checkbox" name="q25[]" value="A">	A. S3 객체 크기를 126MB 미만으로 줄이십시오.	<br></label>
+<label><input type="checkbox" name="q25[]" value="B">	B. 날짜 및 지역별로 데이터 분할 n Amazon S3	<br></label>
+<label><input type="checkbox" name="q25[]" value="C">	C. 파일을 Amazon S3에 큰 단일 객체로 저장합니다.	<br></label>
+<label><input type="checkbox" name="q25[]" value="D">	D. Amazon Kinesis Data Analytics를 사용하여 일괄 처리 작업의 팬으로 쿼리를 실행합니다.	<br></label>
+<label><input type="checkbox" name="q16[]" value="E">	E. AWS 듀오 ETL(추출, 변환 및 로드) 프로세스를 사용하여 csv 파일을 Apache Parquet 형식으로 변환합니다.	<br></label>
+</fieldset>		
+
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q26. 회사는 AWS Organizations를 사용하여 여러 부서의 여러 AWS 계정을 관리합니다. 관리 계정에는 프로젝트 보고서가 포함된 Amazon S3 버킷이 있습니다. 회사는 이 S3 버킷에 대한 액세스를 AWS Organizations의 조직 내 계정 사용자로만 제한하려고 합니다.
+최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?	</legend></br>
+<label><input type="checkbox" name="q26[]" value="A">	A. S3 버킷 정책에 조직 ID에 대한 참조와 함께 aws:PrincipalOrgID 전역 조건 키를 추가합니다.	<br></label>
+<label><input type="checkbox" name="q26[]" value="B">	B. 각 부서에 대한 조직 단위(OU)를 만듭니다. aws:PrincipalOrgPaths 전역 조건 키를 S3 버킷 정책에 추가합니다.	<br></label>
+<label><input type="checkbox" name="q26[]" value="C">	C. AWS CloudTrail을 사용하여 CreateAccount, InviteAccountToOrganization, LeaveOrganization 및 RemoveAccountFromOrganization 이벤트를 모니터링합니다. 그에 따라 S3 버킷 정책을 업데이트합니다.	<br></label>
+<label><input type="checkbox" name="q26[]" value="D">	D. S3 버킷에 액세스해야 하는 각 사용자에 태그를 지정합니다. aws:PrincipalTag 전역 조건 키를 S3 버킷 정책에 추가합니다.	<br></label>
+</fieldset>		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q27. 솔루션 설계자는 웹사이트를 위한 고가용성 인프라를 설계해야 합니다. 웹 사이트는 Amazon EC2 인스턴스에서 실행되는 Windows 웹 서버에 의해 구동됩니다. 솔루션 설계자는 수천 개의 IP 주소에서 시작되는 대규모 DDoS 공격을 완화할 수 있는 솔루션을 구현해야 합니다. 다운타임은 웹사이트에 허용되지 않습니다.
+솔루션 설계자는 이러한 공격으로부터 웹사이트를 보호하기 위해 어떤 조치를 취해야 합니까? (2개를 선택하세요.)</legend></br>
+<label><input type="checkbox" name="q27[]" value="A">	A. AWS Shield Advanced를 사용하여 DDoS 공격을 차단하십시오.	<br></label>
+<label><input type="checkbox" name="q27[]" value="B">	B. 공격자를 자동으로 차단하도록 Amazon GuardDuty를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q27[]" value="C">	C. 정적 및 동적 콘텐츠 모두에 Amazon CloudFront를 사용하도록 웹 사이트를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q27[]" value="D">	D. AWS Lambda 함수를 사용하여 VPC 네트워크 ACL에 공격자 IP 주소를 자동으로 추가합니다.	<br></label>
+<label><input type="checkbox" name="q27[]" value="D">	E. 80% CPU 사용률로 설정된 대상 추적 조정 정책과 함께 Auto Scaling 그룹의 EC2 스팟 인스턴스를 사용합니다.	<br></label>
+</fieldset>		
+		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q28. 회사에는 ALB(Application Load Balancer) 뒤의 단일 가용 영역에 있는 Amazon EC2 Auto Scaling 그룹에서 6개의 프런트 엔드 웹 서버를 실행하는 다중 계층 애플리케이션이 있습니다. 솔루션 설계자는 애플리케이션을 수정하지 않고도 고가용성을 위해 인프라를 수정해야 합니다.
+솔루션 설계자는 고가용성을 제공하는 어떤 아키텍처를 선택해야 합니까?	</legend></br>
+<label><input type="checkbox" name="q28[]" value="A">	A. 두 리전에서 각각 3개의 인스턴스를 사용하는 Auto Scaling 그룹을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q28[]" value="B">	B. 2개의 가용 영역 각각에서 3개의 인스턴스를 사용하도록 Auto Scaling 그룹을 수정합니다.	<br></label>
+<label><input type="checkbox" name="q28[]" value="C">	C. 다른 리전에서 더 많은 인스턴스를 빠르게 생성하는 데 사용할 수 있는 Auto Scaling 템플릿을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q28[]" value="D">	D. 라운드 로빈 구성에서 Amazon EC2 인스턴스 앞의 ALB를 변경하여 웹 계층에 대한 트래픽 균형을 조정합니다.	<br></label>
+</fieldset>		
+		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q29. 한 회사에 Amazon RDS의 데이터베이스에 목록을 저장하는 자동차 판매 웹사이트가 있습니다. 자동차가 판매되면 웹사이트에서 목록을 제거해야 하고 데이터를 여러 대상 시스템으로 보내야 합니다.
+솔루션 아키텍트는 어떤 디자인을 추천해야 할까요?</legend></br>
+<label><input type="checkbox" name="q29[]" value="A">	"A. RDS 이벤트 알림을 구독하고 여러 Amazon Simple Notification Service(Amazon)에 팬아웃된 Amazon Simple Queue Service(Amazon SQS) 대기열을 보냅니다.
+SNS) 주제 AWS Lambda 함수를 사용하여 대상을 업데이트합니다."	<br></label>
+<label><input type="checkbox" name="q29[]" value="B">	"B. Amazon RDS의 데이터베이스가 Amazon Simple Queue Service(Amazon SQS) 대기열로 정보를 전송하도록 업데이트될 때 트리거되는 AWS Lambda 함수 생성
+대상이 소비하도록 합니다."	<br></label>
+<label><input type="checkbox" name="q29[]" value="C">	C. Amazon RDS의 데이터베이스가 대상이 사용할 Amazon Simple Queue Service(Amazon SQS) FIFO 대기열로 정보를 보내도록 업데이트될 때 트리거되는 AWS Lambda 함수를 생성합니다.	<br></label>
+<label><input type="checkbox" name="q29[]" value="D">	"D. RDS 이벤트 알림을 구독하고 여러 Amazon Simple Queue Service(Amazon SQS)로 팬아웃된 Amazon Simple Notification Service(Amazon SNS) 주제를 보냅니다.
+대기열 AWS Lambda 함수를 사용하여 대상을 업데이트합니다."	<br></label>
+</fieldset>		
+		
+<fieldset class="answer">		
+<legend class="text-justify">Q30. 회사는 Amazon EC2 인스턴스에서 Amazon S3 버킷으로 데이터를 이동해야 합니다. 회사는 API 호출과 데이터가 공용 인터넷 경로를 통해 라우팅되지 않도록 해야 합니다. EC2 인스턴스만 S3 버킷에 데이터를 업로드할 수 있는 액세스 권한이 있습니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q30[]" value="A">	A. EC2 인스턴스가 있는 서브넷에서 Amazon S3에 대한 인터페이스 VPC 엔드포인트를 생성합니다. EC2 인스턴스의 IAM 역할만 액세스할 수 있도록 리소스 정책을 S3 버킷에 연결합니다.	<br></label>
+<label><input type="checkbox" name="q30[]" value="B">	B. EC2 인스턴스가 있는 가용 영역에서 Amazon S3용 게이트웨이 VPC 엔드포인트를 생성합니다. 적절한 보안 그룹을 끝점에 연결합니다. EC2 인스턴스의 IAM 역할만 액세스할 수 있도록 S3 버킷에 리소스 정책을 연결합니다.	<br></label>
+<label><input type="checkbox" name="q30[]" value="C">	C. EC2 인스턴스 내부에서 nslookup 도구를 실행하여 S3 버킷의 서비스 API 엔드포인트의 프라이빗 IP 주소를 얻습니다. VPC 라우팅 테이블에 경로를 생성하여 EC2 인스턴스에 S3 버킷에 대한 액세스 권한을 제공합니다. EC2 인스턴스의 IAM 역할만 액세스할 수 있도록 리소스 정책을 S3 버킷에 연결합니다.	<br></label>
+<label><input type="checkbox" name="q30[]" value="D">	D. AWS에서 제공하는 공개적으로 사용 가능한 ip-ranges.json 타일을 사용하여 S3 버킷의 서비스 API 엔드포인트의 프라이빗 IP 주소를 얻습니다. VPC 라우팅 테이블에 경로를 생성하여 EC2 인스턴스에 S3 버킷에 대한 액세스 권한을 제공합니다. EC2 인스턴스의 IAM 역할만 액세스할 수 있도록 리소스 정책을 S3 버킷에 연결합니다.	<br></label>
+</fieldset>		
+
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q31. 회사에서 새 애플리케이션을 시작하고 Amazon CloudWatch 대시보드에 애플리케이션 지표를 표시합니다. 회사의 제품 관리자는 이 대시보드에 주기적으로 액세스해야 합니다. 제품 관리자에게 AWS 계정이 없습니다. 솔루션 설계자는 최소 권한 원칙에 따라 제품 관리자에게 액세스 권한을 제공해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q31[]" value="A">	A. CloudWatch 콘솔에서 대시보드를 공유합니다. 제품 관리자의 이메일 주소를 입력하고 공유 단계를 완료합니다. 대시보드에 대한 공유 가능한 링크를 제품 관리자에게 제공하십시오.	<br></label>
+<label><input type="checkbox" name="q31[]" value="B">	B. 특히 제품 관리자를 위한 IAM 사용자를 생성합니다. CloudWatch 읽기 전용 액세스 관리형 정책을 사용자에게 연결합니다. 새 로그인 자격 증명을 제품 관리자와 공유합니다. 올바른 대시보드의 브라우저 URL을 제품 관리자와 공유하십시오.	<br></label>
+<label><input type="checkbox" name="q31[]" value="C">	C. 회사 직원을 위한 IAM 사용자를 생성하고 View Only Access AWS 관리형 정책을 IAM 사용자에게 연결합니다. 새 로그인 자격 증명을 제품 관리자와 공유하십시오. 제품 관리자에게 CloudWatch 콘솔로 이동하여 대시보드 섹션에서 이름으로 대시보드를 찾으라고 요청합니다.	<br></label>
+<label><input type="checkbox" name="q31[]" value="D">	D. 퍼블릭 서브넷에 배스천 서버를 배포합니다. 제품 관리자가 대시보드에 액세스해야 하는 경우 서버를 시작하고 RDP 자격 증명을 공유합니다. 배스천 서버에서 대시보드를 볼 수 있는 적절한 권한이 있는 캐시된 AWS 자격 증명으로 대시보드 URL을 열도록 브라우저가 구성되어 있는지 확인합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q32. 회사는 AWS에서 2계층 전자상거래 웹사이트를 운영합니다. 웹 계층은 트래픽을 Amazon EC2 인스턴스로 보내는 로드 밸런서로 구성됩니다. 데이터베이스 계층은 Amazon RDS DB 인스턴스를 사용합니다. EC2 인스턴스 및 RDS DB 인스턴스는 공용 인터넷에 노출되어서는 안 됩니다. EC2 인스턴스는 타사 웹 서비스를 통한 주문 결제 처리를 완료하기 위해 인터넷 액세스가 필요합니다. 애플리케이션은 고가용성이어야 합니다.
+이러한 요구 사항을 충족하는 구성 옵션의 조합은 무엇입니까? (2개를 선택하세요.)</legend></br>
+<label><input type="checkbox" name="q32[]" value="A">	A. Auto Scaling 그룹을 사용하여 프라이빗 서브넷에서 EC2 인스턴스를 시작합니다. 프라이빗 서브넷에 RDS 다중 AZ DB 인스턴스를 배포합니다.	<br></label>
+<label><input type="checkbox" name="q32[]" value="B">	B. 2개의 가용 영역에 걸쳐 2개의 프라이빗 서브넷과 2개의 NAT 게이트웨이가 있는 VPC를 구성합니다. 프라이빗 서브넷에 Application Load Balancer를 배포합니다.	<br></label>
+<label><input type="checkbox" name="q32[]" value="C">	C. Auto Scaling 그룹을 사용하여 2개의 가용 영역에 걸쳐 퍼블릭 서브넷에서 EC2 인스턴스를 시작합니다. 프라이빗 서브넷에 RDS 다중 AZ DB 인스턴스를 배포합니다.	<br></label>
+<label><input type="checkbox" name="q32[]" value="D">	D. 2개의 가용 영역에 걸쳐 1개의 퍼블릭 서브넷, 1개의 프라이빗 서브넷 및 2개의 NAT 게이트웨이로 VPC를 구성합니다. 퍼블릭 서브넷에 Application Load Balancer를 배포합니다.	<br></label>
+<label><input type="checkbox" name="q32[]" value="E">	E. 2개의 가용 영역에 걸쳐 2개의 퍼블릭 서브넷, 2개의 프라이빗 서브넷 및 2개의 NAT 게이트웨이로 VPC를 구성합니다. 퍼블릭 서브넷에 Application Load Balancer를 배포합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q33. 회사는 Application Load Balancer 뒤의 Amazon EC2 인스턴스에서 비즈니스 크리티컬 웹 애플리케이션을 실행하고 있습니다. EC2 인스턴스는 Auto Scaling 그룹에 있습니다. 애플리케이션은 단일 가용 영역에 배포된 Amazon Aurora PostgreSQL 데이터베이스를 사용합니다. 회사는 다운타임과 데이터 손실을 최소화하면서 애플리케이션의 고가용성을 원합니다.
+최소한의 운영 노력으로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q33[]" value="A">	A. EC2 인스턴스를 다른 AWS 리전에 배치합니다. Amazon Route 53 상태 확인을 사용하여 트래픽을 리디렉션합니다. Aurora PostgreSQL 교차 리전 복제를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q33[]" value="B">	B. 여러 가용 영역을 사용하도록 Auto Scaling 그룹을 구성합니다. 데이터베이스를 다중 AZ로 구성합니다. 데이터베이스에 대한 Amazon RDS 프록시 인스턴스를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q33[]" value="C">	C. 하나의 가용 영역을 사용하도록 Auto Scaling 그룹을 구성합니다. 데이터베이스의 시간별 스냅샷을 생성합니다. 장애가 발생한 경우 스냅샷에서 데이터베이스를 복구합니다.	<br></label>
+<label><input type="checkbox" name="q33[]" value="D">	D. 여러 AWS 리전을 사용하도록 Auto Scaling 그룹을 구성합니다. 애플리케이션의 데이터를 Amazon S3에 씁니다. S3 이벤트 알림을 사용하여 AWS Lambda 함수를 시작하여 데이터베이스에 데이터를 씁니다.	<br></label>
+</fieldset>
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q34. 회사는 AWS에서 온라인 마켓플레이스 웹 애플리케이션을 실행합니다. 이 애플리케이션은 피크 시간에 수십만 명의 사용자에게 서비스를 제공합니다. 이 회사는 수백만 건의 금융 거래 세부 정보를 다른 여러 내부 애플리케이션과 공유할 수 있는 확장 가능한 거의 실시간 솔루션이 필요합니다. 또한 지연 시간이 짧은 검색을 위해 문서 데이터베이스에 저장하기 전에 민감한 데이터를 제거하기 위해 트랜잭션을 처리해야 합니다.
+이러한 요구 사항을 충족하기 위해 솔루션 설계자는 무엇을 권장해야 합니까?</legend></br>
+<label><input type="checkbox" name="q34[]" value="A">	A. 트랜잭션 데이터를 Amazon DynamoDB에 저장합니다. 쓰기 시 모든 트랜잭션에서 민감한 데이터를 제거하도록 DynamoDB에서 규칙을 설정합니다. DynamoDB 스트림을 사용하여 다른 애플리케이션과 트랜잭션 데이터를 공유합니다.	<br></label>
+<label><input type="checkbox" name="q34[]" value="B">	B. 트랜잭션 데이터를 Amazon Kinesis Data Firehose로 스트리밍하여 Amazon DynamoDB 및 Amazon S3에 데이터를 저장합니다. Kinesis Data Firehose와 AWS Lambda 통합을 사용하여 민감한 데이터를 제거하십시오. 다른 애플리케이션은 Amazon S3에 저장된 데이터를 사용할 수 있습니다.	<br></label>
+<label><input type="checkbox" name="q34[]" value="C">	C. 트랜잭션 데이터를 Amazon Kinesis Data Streams로 스트리밍합니다. AWS Lambda 통합을 사용하여 모든 트랜잭션에서 민감한 데이터를 제거한 다음 Amazon DynamoDB에 트랜잭션 데이터를 저장합니다. 다른 애플리케이션은 Kinesis 데이터 스트림의 트랜잭션 데이터를 사용할 수 있습니다.	<br></label>
+<label><input type="checkbox" name="q34[]" value="D">	D. 일괄 처리된 트랜잭션 데이터를 Amazon S3에 파일로 저장합니다. Amazon S3에서 파일을 업데이트하기 전에 AWS Lambda를 사용하여 모든 파일을 처리하고 민감한 데이터를 제거하십시오. 그러면 Lambda 함수가 Amazon DynamoDB에 데이터를 저장합니다. 다른 애플리케이션은 Amazon S3에 저장된 트랜잭션 파일을 사용할 수 있습니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q35. 새로운 직원이 배포 엔지니어로 회사에 합류했습니다. 배포 엔지니어는 AWS CloudFormation 템플릿을 사용하여 여러 AWS 리소스를 생성합니다. 솔루션 설계자는 배포 엔지니어가 최소 권한 원칙에 따라 작업 활동을 수행하기를 원합니다.
+솔루션 설계자는 이 목표를 달성하기 위해 어떤 조합의 조치를 취해야 합니까? (2개를 선택하세요.)</legend></br>
+<label><input type="checkbox" name="q35[]" value="A">	A. 배포 엔지니어가 AWS CloudFormation 스택 작업을 수행하기 위해 AWS 계정 루프 사용자 자격 증명을 사용하도록 합니다.	<br></label>
+<label><input type="checkbox" name="q35[]" value="B">	B. 배포 엔지니어를 위한 새 IAM 사용자를 생성하고 PowerUsers IAM 정책이 연결된 그룹에 IAM 사용자를 추가합니다.	<br></label>
+<label><input type="checkbox" name="q35[]" value="C">	C. 배포 엔지니어를 위한 새 IAM 사용자를 생성하고 IAM 관리/액세스 정책이 연결된 그룹에 IAM 사용자를 추가합니다.	<br></label>
+<label><input type="checkbox" name="q35[]" value="D">	D. 배포 엔지니어를 위한 새 IAM 사용자를 생성하고 AWS CloudFormation 작업만 허용하는 IAM 정책이 있는 그룹에 IAM 사용자를 추가합니다.	<br></label>
+<label><input type="checkbox" name="q35[]" value="E">	E. 배포 엔지니어가 Dial IAM 역할을 사용하여 AWS CloudFormation 스택 및 시작 스택에 대한 권한을 명시적으로 정의하도록 IAM 역할을 생성합니다.	<br></label>
+</fieldset>		
+
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q36. 회사에 미션 크리티컬 데이터가 포함된 Amazon S3 버킷이 있습니다. 회사는 이 데이터가 우발적인 삭제로부터 보호되기를 원합니다. 데이터에 계속 액세스할 수 있어야 하며 사용자가 의도적으로 데이터를 삭제할 수 있어야 합니다.
+솔루션 설계자는 이를 달성하기 위해 어떤 단계 조합을 취해야 합니까? (2개를 선택하세요.)</legend></br>
+<label><input type="checkbox" name="q36[]" value="A">	A. S3 버킷에서 버전 관리를 활성화합니다.	<br></label>
+<label><input type="checkbox" name="q36[]" value="B">	B. S3 버킷에서 MFA 삭제를 활성화합니다.	<br></label>
+<label><input type="checkbox" name="q36[]" value="C">	C. S3 버킷에 버킷 정책을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q36[]" value="D">	D. S3 버킷에서 기본 암호화를 활성화합니다.	<br></label>
+<label><input type="checkbox" name="q36[]" value="E">	E. S3 버킷의 객체에 대한 수명 주기 정책을 생성합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q37. 회사에서 Amazon S3 버킷에 민감한 사용자 정보를 저장하고 있습니다. 회사는 VPC 내부의 Amazon EC2 인스턴스에서 실행되는 애플리케이션 계층에서 이 버킷에 대한 보안 액세스를 제공하려고 합니다.
+솔루션 설계자는 이를 달성하기 위해 어떤 단계 조합을 취해야 합니까? (2개를 선택하세요.)</legend></br>
+<label><input type="checkbox" name="q37[]" value="A">	A. VPC 내에서 Amazon S3용 VPC 게이트웨이 엔드포인트를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q37[]" value="B">	B. S3 버킷의 객체를 퍼블릭으로 만들기 위한 버킷 정책을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q37[]" value="C">	C. VPC에서 실행되는 애플리케이션 계층으로만 액세스를 제한하는 버킷 정책을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q37[]" value="D">	D. S3 액세스 정책으로 IAM 사용자를 생성하고 IAM 자격 증명을 EC2 인스턴스에 복사합니다.	<br></label>
+<label><input type="checkbox" name="q37[]" value="E">	E. NAT 인스턴스를 생성하고 EC2 인스턴스가 NAT 인스턴스를 사용하여 S3 버킷에 액세스하도록 합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q38. 회사는 다른 데이터베이스에서 가져온 배치 데이터를 생성합니다. 이 회사는 또한 네트워크 센서 및 애플리케이션 API에서 라이브 스트림 데이터를 생성합니다. 회사는 비즈니스 분석을 위해 모든 데이터를 한 곳으로 통합해야 합니다. 회사는 수신 데이터를 처리한 다음 다른 Amazon S3 버킷에 데이터를 준비해야 합니다. 팀은 나중에 일회성 쿼리를 실행하고 데이터를 비즈니스 인텔리전스 도구로 가져와 핵심 성과 지표(KPI)를 표시합니다.
+가장 적은 운영 오버헤드로 이러한 요구 사항을 충족하는 단계 조합은 무엇입니까? (2개를 선택하세요.)</legend></br>
+<label><input type="checkbox" name="q38[]" value="A">	A. Amazon Athena foe 일회성 쿼리 사용 Amazon QuickSight를 사용하여 KPI용 대시보드를 생성합니다.	<br></label>
+<label><input type="checkbox" name="q38[]" value="B">	B. 일회성 쿼리에 Amazon Kinesis Data Analytics 사용 Amazon QuickSight를 사용하여 KPI용 대시보드를 생성합니다.	<br></label>
+<label><input type="checkbox" name="q38[]" value="C">	C. 사용자 지정 AWS Lambda 함수를 생성하여 개별 레코드를 나 데이터베이스에서 Amazon Redshift 더스터로 이동합니다.	<br></label>
+<label><input type="checkbox" name="q38[]" value="D">	D. AWS Glue 추출 변환 및 두꺼비(ETL) 작업을 사용하여 데이터를 JSON 형식으로 변환 데이터를 여러 Amazon OpenSearch Service(Amazon Elasticsearch Service) 더스터에 로드합니다.	<br></label>
+<label><input type="checkbox" name="q38[]" value="E">	E. AWS Lake Formation의 청사진을 사용하여 데이터 레이크로 수집할 수 있는 데이터 식별 AWS Glue를 사용하여 소스를 크롤링하여 데이터를 추출하고 데이터를 Apache Parquet 형식으로 Amazon S3에 로드합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q39. 회사에서 동일한 AWS 리전의 테스트 환경에 대량의 프로덕션 데이터를 복제하는 기능을 개선하려고 합니다. 데이터는 Amazon Elastic Block Store(Amazon EBS) 볼륨의 Amazon EC2 인스턴스에 저장됩니다. 복제된 데이터를 수정해도 프로덕션 환경에 영향을 주지 않아야 합니다. 이 데이터에 액세스하는 소프트웨어는 일관되게 높은 I/O 성능을 요구합니다. 솔루션 설계자는 프로덕션 데이터를 테스트 환경에 복제하는 데 필요한 시간을 최소화해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q39[]" value="A">	A. 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. 테스트 환경의 EC2 인스턴스 스토어 볼륨에 스냅샷을 복원합니다.	<br></label>
+<label><input type="checkbox" name="q39[]" value="B">	B. EBS 다중 연결 기능을 사용하도록 프로덕션 EBS 볼륨을 구성합니다. 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. 테스트 환경의 EC2 인스턴스에 프로덕션 EBS 볼륨을 연결합니다.	<br></label>
+<label><input type="checkbox" name="q39[]" value="C">	C. 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. 새 EBS 볼륨을 생성하고 초기화합니다. 프로덕션 EBS 스냅샷에서 볼륨을 복원하기 전에 테스트 환경의 EC2 인스턴스에 새 EBS 볼륨을 연결합니다.	<br></label>
+<label><input type="checkbox" name="q39[]" value="D">	D. 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. EBS 스냅샷에서 EBS 빠른 스냅샷 복원 기능을 켭니다. 스냅샷을 새 EBS 볼륨으로 복원합니다. 테스트 환경의 EC2 인스턴스에 새 EBS 볼륨을 연결합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q40. 회사에는 Microsoft Windows 공유 파일 저장소가 필요한 온프레미스에서 실행되는 대규모 Microsoft SharePoint 배포가 있습니다. 회사는 이 워크로드를 AWS 클라우드로 마이그레이션하기를 원하며 다양한 스토리지 옵션을 고려하고 있습니다. 저장소 솔루션은 액세스 제어를 위해 고가용성 및 Active Directory와 통합되어야 합니다.
+이러한 요구 사항을 충족하는 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q40[]" value="A">	A. Amazon EFS 스토리지를 구성하고 인증을 위해 Active Directory 도메인을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q40[]" value="B">	B. 두 가용 영역의 AWS Storage Gateway 파일 게이트웨이에 SMB 파일 공유를 생성합니다.	<br></label>
+<label><input type="checkbox" name="q40[]" value="C">	C. Amazon S3 버킷을 생성하고 볼륨으로 탑재하도록 Microsoft Windows Server를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q40[]" value="D">	D. AWS에서 Windows 파일 서버용 Amazon FSx 파일 시스템을 생성하고 인증을 위해 Active Directory 도메인을 설정합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q41. 회사에서 애플리케이션을 AWS로 마이그레이션하고 있습니다. 응용 프로그램은 다른 계정에 배포됩니다. 회사는 AWS Organizations를 사용하여 중앙에서 계정을 관리합니다. 회사의 보안 팀은 회사의 모든 계정에 SSO(Single Sign-On) 솔루션이 필요합니다. 회사는 온프레미스에서 사용자 및 그룹을 계속 관리해야 합니다.
+자체 관리되는 Microsoft Active Directory.</legend></br>
+<label><input type="checkbox" name="q41[]" value="A">	A. AWS SSO 콘솔에서 AWS Single Sing-On(AWS SSO)을 활성화합니다. 단방향 포리스트 트러스트 또는 단방향 도메인 트러스트를 생성하여 Microsoft Active Directory용 AWS Directory Service를 사용하여 회사의 자체 관리형 Microsoft Active Directory를 AWS SSO와 연결합니다.	<br></label>
+<label><input type="checkbox" name="q41[]" value="B">	B. AWS SSO 콘솔에서 AWS Single Sing-On(AWS SSO)을 활성화합니다. Microsoft Active Directory용 AWS Directory Service를 사용하여 회사의 자체 관리형 Microsoft Active Directory를 AWS SSO와 연결하는 양방향 포리스트 트러스트를 생성합니다.	<br></label>
+<label><input type="checkbox" name="q41[]" value="C">	C. AWS 디렉터리 서비스를 사용합니다. 회사의 자체 관리 Microsoft Active Directory와 양방향 신뢰 관계를 만드십시오.	<br></label>
+<label><input type="checkbox" name="q41[]" value="D">	D. ID 공급자(idP)를 온프레미스에 배포합니다. AWS SSO 콘솔에서 AWS Single Sing-On(AWS SSO)을 활성화합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q42. 회사에서 SQL 데이터베이스를 사용하여 공개적으로 액세스할 수 있는 영화 데이터를 저장하고 있습니다. 데이터베이스는 Amazon RDS 단일 AZ DB 인스턴스에서 실행됩니다. 스크립트는 매일 임의의 간격으로 쿼리를 실행하여 데이터베이스에 추가된 새 영화의 수를 기록합니다. 스크립트는 업무 시간 동안 최종 합계를 보고해야 합니다. 회사의 개발 팀은 스크립트가 실행 중일 때 데이터베이스 성능이 개발 작업에 적합하지 않다는 것을 알게 되었습니다. 솔루션 설계자는 이 문제를 해결하기 위한 솔루션을 권장해야 합니다.
+최소한의 운영 오버헤드로 이 요구 사항을 충족하는 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q42[]" value="A">	A. DB 인스턴스를 다중 AZ 배포로 수정합니다.	<br></label>
+<label><input type="checkbox" name="q42[]" value="B">	B. 데이터베이스의 읽기 전용 복제본 생성 읽기 전용 복제본만 쿼리하도록 스크립트를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q42[]" value="C">	C. 개발 팀에게 매일 일과가 끝날 때 데이터베이스의 항목을 수동으로 내보내도록 지시합니다.	<br></label>
+<label><input type="checkbox" name="q42[]" value="D">	D. Amazon ElastiCache를 사용하여 스크립트가 데이터베이스에 대해 실행하는 일반적인 쿼리를 캐시합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q43. 회사는 사용자 업로드 문서를 Amazon EBS 볼륨에 저장하는 단일 Amazon EC2 인스턴스를 사용하여 AWS에서 웹 애플리케이션을 호스팅하고 있습니다. 더 나은 확장성과 가용성을 위해 이 회사는 아키텍처를 복제하고 다른 가용 영역에 두 번째 EC2 인스턴스와 EBS 볼륨을 생성하여 Application Load Balancer 뒤에 배치했습니다. 이 변경을 완료한 후 사용자는 웹 사이트를 새로 고칠 때마다 문서의 일부 또는 다른 하위 집합을 볼 수 있지만 모든 문서를 동시에 볼 수는 없다고 보고했습니다.
+솔루션 설계자는 사용자가 모든 문서를 한 번에 볼 수 있도록 무엇을 제안해야 합니까?</legend></br>
+<label><input type="checkbox" name="q43[]" value="A">	A. 두 EBS 볼륨에 모든 문서가 포함되도록 데이터를 복사합니다.	<br></label>
+<label><input type="checkbox" name="q43[]" value="B">	B. 사용자를 문서가 있는 서버로 안내하도록 Application Load Balancer를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q43[]" value="C">	C. 두 EBS 볼륨의 데이터를 Amazon EFS로 복사합니다. 새 문서를 Amazon EFS에 저장하도록 애플리케이션을 수정합니다.	<br></label>
+<label><input type="checkbox" name="q43[]" value="D">	D. 두 서버 모두에 요청을	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q44. 솔루션 설계자가 다중 서브넷 VPC 아키텍처를 개발 중입니다. 솔루션은 2개의 가용 영역에 있는 6개의 서브넷으로 구성됩니다. 서브넷은 공용, 사설 및 데이터베이스 전용으로 정의됩니다. 프라이빗 서브넷에서 실행되는 Amazon EC2 인스턴스만 데이터베이스에 액세스할 수 있어야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q44[]" value="A">	A. 퍼블릭 서브넷의 CIDR 블록에 대한 경로를 제외하는 now route table을 생성합니다. 라우팅 테이블을 데이터베이스 서브넷에 연결합니다.	<br></label>
+<label><input type="checkbox" name="q44[]" value="B">	B. 퍼블릭 서브넷의 인스턴스가 사용하는 보안 그룹으로부터의 수신을 거부하는 보안 그룹을 생성합니다. 보안 그룹을 Amazon RDS DB 인스턴스에 연결합니다.	<br></label>
+<label><input type="checkbox" name="q44[]" value="C">	C. 프라이빗 서브넷의 인스턴스가 사용하는 보안 그룹으로부터의 수신을 허용하는 보안 그룹을 생성합니다. 보안 그룹을 Amazon RDS DB 인스턴스에 연결합니다.	<br></label>
+<label><input type="checkbox" name="q44[]" value="D">	D. 퍼블릭 서브넷과 프라이빗 서브넷 사이에 새로운 피어링 연결을 생성합니다. 프라이빗 서브넷과 데이터베이스 서브넷 간에 다른 피어링 연결을 만듭니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q45. 한 회사는 사용자에게 글로벌 속보 지역 경보 및 날씨 업데이트를 제공하는 웹 기반 포털을 운영합니다. 포털은 정적 콘텐츠와 동적 콘텐츠를 혼합하여 각 사용자에게 개인화된 보기를 제공합니다. 콘텐츠는 ALB(Application Load Balancer) 뒤의 Amazon EC2 인스턴스에서 실행되는 API 서버를 통해 HTTPS를 통해 제공됩니다. 회사는 포털이 이 콘텐츠를 가능한 한 빨리 전 세계 사용자에게 제공하기를 원합니다.
+솔루션 설계자는 모든 사용자의 대기 시간을 최소화하도록 애플리케이션을 어떻게 설계해야 합니까?</legend></br>
+<label><input type="checkbox" name="q45[]" value="A">	A. 단일 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon CloudFront를 사용하여 ALB를 오리진으로 지정하여 모든 정적 및 동적 콘텐츠를 제공합니다.	<br></label>
+<label><input type="checkbox" name="q45[]" value="B">	B. 두 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon Route 53 지연 시간 라우팅 정책을 사용하여 가장 가까운 리전의 ALB에서 모든 콘텐츠를 제공합니다.	<br></label>
+<label><input type="checkbox" name="q45[]" value="C">	C. 단일 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon CloudFront를 사용하여 정적 콘텐츠를 제공합니다. ALB에서 직접 동적 콘텐츠를 제공합니다.	<br></label>
+<label><input type="checkbox" name="q45[]" value="D">	D. 두 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon Route 53 지리적 위치 라우팅 정책을 사용하여 가장 가까운 리전에서 ALB의 모든 콘텐츠를 제공합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q46. 솔루션 설계자는 AWS에 배포되는 새 애플리케이션을 위한 클라우드 아키텍처를 설계하고 있습니다. 처리할 작업 수에 따라 필요에 따라 애플리케이션 노드를 추가 및 제거하면서 프로세스가 병렬로 실행되어야 합니다. 프로세서 응용 프로그램은 상태 비저장입니다. 솔루션 설계자는 응용 프로그램이 느슨하게 연결되어 있고 작업 항목이 영구적으로 저장되어 있는지 확인해야 합니다.
+솔루션 설계자는 어떤 디자인을 사용해야 합니까?</legend></br>
+<label><input type="checkbox" name="q46[]" value="A">	A. 처리해야 하는 작업을 보낼 Amazon SNS 주제를 생성합니다. 프로세서 애플리케이션으로 구성된 Amazon 머신 이미지(AMI)를 생성합니다. AMI를 사용하는 시작 구성을 생성합니다. 시작 구성을 사용하여 Auto Scaling 그룹을 생성합니다. CPU 사용량에 따라 노드를 추가 및 제거하도록 Auto Scaling 그룹에 대한 조정 정책을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q46[]" value="B">	B. 처리해야 하는 작업을 보관할 Amazon SQS 대기열을 생성합니다. 프로세서 애플리케이션으로 구성된 Amazon 머신 이미지(AMI)를 생성합니다. AMI를 사용하는 시작 구성을 생성합니다. 시작 구성을 사용하여 Auto Scaling 그룹을 생성합니다. Auto Scaling 그룹의 조정 정책을 설정하여 네트워크 사용량에 따라 노드를 추가 및 제거합니다.	<br></label>
+<label><input type="checkbox" name="q46[]" value="C">	C. 처리해야 하는 작업을 보관할 Amazon SQS 대기열을 생성합니다. 프로세서 애플리케이션으로 구성된 Amazon 머신 이미지(AMI)를 생성합니다. AMI를 사용하는 시작 템플릿을 생성합니다. 시작 템플릿을 사용하여 Auto Scaling 그룹을 생성합니다. SQS 대기열의 항목 수에 따라 노드를 추가 및 제거하도록 Auto Scaling 그룹에 대한 조정 정책을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q46[]" value="D">	D. 처리해야 하는 작업을 보낼 Amazon SNS 주제를 생성합니다. 프로세서 애플리케이션으로 구성된 Amazon 머신 이미지(AMI)를 생성합니다. AMI를 사용하는 시작 템플릿을 생성합니다. 시작 템플릿을 사용하여 Auto Scaling 그룹을 생성합니다. SNS 주제에 게시된 메시지 수에 따라 노드를 추가 및 제거하도록 Auto Scaling 그룹에 대한 조정 정책을 설정합니다.	<br></label>
+</fieldset>		
+
+<fieldset class="answer">		
+<legend class="text-justify">Q47. 회사는 Amazon EC2 인스턴스 집합에서 프로덕션 애플리케이션을 실행합니다. 애플리케이션은 Amazon SQS 대기열에서 데이터를 읽고 메시지를 병렬로 처리합니다. 메시지 볼륨은 예측할 수 없으며 종종 간헐적인 트래픽이 발생합니다. 이 애플리케이션은 다운타임 없이 지속적으로 메시지를 처리해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 가장 비용 효율적으로 충족합니까?</legend></br>
+<label><input type="checkbox" name="q47[]" value="A">	A. 스팟 인스턴스를 독점적으로 사용하여 필요한 최대 용량을 처리하십시오.	<br></label>
+<label><input type="checkbox" name="q47[]" value="B">	B. 필요한 최대 용량을 처리하기 위해 독점적으로 예약 인스턴스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q47[]" value="C">	C. 기준 용량으로 예약 인스턴스를 사용하고 추가 용량을 처리하려면 스팟 인스턴스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q47[]" value="D">	D. 기준 용량으로 예약 인스턴스를 사용하고 추가 용량을 처리하기 위해 온디맨드 인스턴스를 사용합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q48. 한 회사에서 사용자가 Amazon S3에 작은 파일을 업로드하는 애플리케이션을 설계하고 있습니다. 사용자가 파일을 업로드한 후 데이터를 변환하고 나중에 분석할 수 있도록 데이터를 JSON 형식으로 저장하려면 파일에 일회성 단순 처리가 필요합니다. 각 파일은 업로드 후 최대한 빨리 처리해야 합니다. 수요는 다양할 것입니다. 어떤 날에는 사용자가 많은 수의 파일을 업로드합니다. 다른 날에는 사용자가 몇 개의 파일을 업로드하거나 파일을 업로드하지 않습니다.
+최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q48[]" value="A">	A. Amazon S3에서 텍스트 파일을 읽도록 Amazon EMR을 구성합니다. 처리 스크립트를 실행하여 데이터를 변환합니다. 결과 JSON 파일을 Amazon Aurora DB 클러스터에 저장합니다.	<br></label>
+<label><input type="checkbox" name="q48[]" value="B">	B. Amazon SQS(Amazon Simple Queue Service) 대기열에 이벤트 알림을 보내도록 Amazon S3를 구성합니다. Amazon EC2 인스턴스를 사용하여 대기열에서 읽고 데이터를 처리합니다. 결과 JSON 파일을 Amazon DynamoDB에 저장합니다.	<br></label>
+<label><input type="checkbox" name="q48[]" value="C">	C. 이벤트 알림을 Amazon Simple Queue Service(Amazon SQS) 대기열로 보내도록 Amazon S3를 구성합니다. AWS Lambda 함수를 사용하여 대기열에서 읽고 데이터를 처리합니다. 결과 JSON 파일을 Amazon DynamoDB에 저장합니다.	<br></label>
+<label><input type="checkbox" name="q48[]" value="D">	D. 새 파일이 업로드될 때 Amazon Kinesis Data Streams에 이벤트를 보내도록 Amazon EventBridge(Amazon CloudWatch Events)를 구성합니다. AWS Lambda 함수를 사용하여 스트림에서 이벤트를 소비하고 데이터를 처리합니다. 결과 JSON 파일을 Amazon Aurora DB 클러스터에 저장합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q49. 회사에서 3계층 웹 응용 프로그램을 사용하여 신입 직원에게 교육을 제공합니다. 애플리케이션은 매일 12시간 동안만 액세스됩니다. 회사는 Amazon RDS for MySQL DB 인스턴스를 사용하여 정보를 저장하고 비용을 최소화하려고 합니다.
+솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q49[]" value="A">	A. AWS Systems Manager Session Manager에 대한 IAM 정책을 구성합니다. 정책에 대한 IAM 역할을 생성합니다. 역할의 신뢰 관계를 업데이트합니다. DB 인스턴스에 대한 자동 시작 및 중지를 설정합니다.	<br></label>
+<label><input type="checkbox" name="q49[]" value="B">	B. DB 인스턴스가 중지될 때 사용자가 캐시의 데이터에 액세스할 수 있는 기능을 제공하는 Redis용 Amazon ElastiCache 캐시 클러스터를 생성합니다. DB 인스턴스가 시작된 후 캐시를 무효화합니다.	<br></label>
+<label><input type="checkbox" name="q49[]" value="C">	C. Amazon EC2 인스턴스를 시작합니다. Amazon RDS에 대한 액세스 권한을 부여하는 IAM 역할을 생성합니다. 역할을 EC2 인스턴스에 연결합니다. 원하는 일정에 따라 EC2 인스턴스를 시작 및 중지하도록 크론 작업을 구성합니다.	<br></label>
+<label><input type="checkbox" name="q49[]" value="D">	D. AWS Lambda 함수를 생성하여 DB 인스턴스를 시작 및 중지합니다. Amazon EventBridge(Amazon CloudWatch Events) 예약 규칙을 생성하여 Lambda 함수를 호출합니다. 규칙에 대한 이벤트 대상으로 Lambda 함수를 구성합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q50. 솔루션 설계자는 회사의 스토리지 비용을 줄이기 위한 솔루션을 구현해야 합니다. 회사의 모든 데이터는 Amazon S3 Standard 스토리지 클래스에 있습니다. 회사는 모든 데이터를 최소 25년 동안 보관해야 합니다. 최근 2년 동안의 데이터는 가용성이 높고 즉시 검색할 수 있어야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q50[]" value="A">	A. 객체를 즉시 S3 Glacier Deep Archive로 전환하도록 S3 수명 주기 정책을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q50[]" value="B">	B. 2년 후에 객체를 S3 Glacier Deep Archive로 전환하도록 S3 수명 주기 정책을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q50[]" value="C">	C. S3 Intelligent-Tiering을 사용합니다. 데이터가 S3 Glacier Deep Archive에 보관되도록 보관 옵션을 활성화합니다.	<br></label>
+<label><input type="checkbox" name="q50[]" value="D">	D. S3 수명 주기 정책을 설정하여 객체를 S3 One Zone-Infrequent Access(S3 One Zone-IA)로 즉시 전환하고 2년 후에는 S3 Glacier Deep Archive로 전환합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q51. 리포트 팀은 Amazon S3 버킷에서 매일 파일을 수신합니다. 리포트 팀은 이 초기 S3 버킷의 파일을 수동으로 검토하고 Amazon QuickSight와 함께 사용하기 위해 매일 같은 시간에 분석 S3 버킷으로 복사합니다. 추가 팀이 초기 S3 버킷에 더 큰 크기의 더 많은 파일을 보내기 시작했습니다.
+리포트 팀은 파일이 초기 S3 버킷에 들어갈 때 자동으로 분석 S3 버킷을 이동하려고 합니다. 또한 리포트 팀은 AWS Lambda 함수를 사용하여 복사된 데이터에서 패턴 일치 코드를 실행하려고 합니다. 또한 리포트 팀은 데이터 파일을 Amazon SageMaker Pipelines의 파이프라인으로 보내려고 합니다.
+최소한의 운영 오버헤드로 이러한 요구 사항을 충족하기 위해 솔루션 설계자는 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q51[]" value="A">	A. 분석 S3 버킷에 파일을 복사하는 Lambda 함수를 생성합니다. 분석 S3 버킷에 대한 S3 이벤트 알림을 생성합니다. 이벤트 알림의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다. s30bjectCreated:Put을 이벤트 유형으로 구성합니다.	<br></label>
+<label><input type="checkbox" name="q51[]" value="B">	"B. 분석 S3 버킷에 파일을 복사하는 Lambda 함수를 생성합니다. Amazon EventBridge(Amazon CloudWatch Events)에 이벤트 알림을 보내도록 분석 S3 버킷을 구성합니다. EventBridge(CloudWatch 이벤트)에서 ObjectCreated 규칙을 구성합니다. 구성
+규칙의 대상인 Lambda 및 SageMaker 파이프라인"	<br></label>
+<label><input type="checkbox" name="q51[]" value="C">	C. S3 버킷 간에 S3 복제를 구성합니다. 분석 S3 버킷에 대한 S3 이벤트 알림을 생성합니다. 이벤트 알림의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다. s30bjectCreated:Put을 이벤트 유형으로 구성합니다.	<br></label>
+<label><input type="checkbox" name="q51[]" value="D">	D. S3 버킷 간에 S3 복제를 구성합니다. Amazon EventBridge(Amazon CloudWatch Events)에 이벤트 알림을 보내도록 분석 S3 버킷을 구성합니다. EventBridge(CloudWatch 이벤트)에서 ObjectCreated 규칙을 구성합니다. 규칙의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q52. 빠르게 성장하는 전자 상거래 회사는 단일 AWS 리전에서 워크로드를 실행하고 있습니다. 솔루션 설계자는 다른 AWS 리전을 포함하는 재해 복구(DR) 전략을 생성해야 합니다. 회사는 데이터베이스가 DR 지역에서 가능한 가장 짧은 대기 시간으로 최신 상태가 되기를 원합니다. DR 지역의 나머지 인프라는 감소된 용량으로 실행되어야 하며 필요에 따라 확장할 수 있어야 합니다.
+가장 낮은 RTO(복구 시간 목표)로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q52[]" value="A">	A. 파일럿 라이트 배포와 함께 Amazon Aurora 글로벌 데이터베이스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q52[]" value="B">	B. 웜 스탠바이 배포와 함께 Amazon Aurora 글로벌 데이터베이스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q52[]" value="C">	C. 파일럿 라이트 배포와 함께 Amazon RDS 다중 AZ DB 인스턴스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q52[]" value="D">	D. 웜 대기 배포와 함께 Amazon RDS 다중 AZ DB 인스턴스를 사용합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q53. 회사에 사용자가 웹 인터페이스 또는 모바일 앱을 통해 문서를 업로드하는 프로덕션 웹 애플리케이션이 있습니다. 새로운 규정 요구 사항에 따라 새 문서는 저장된 후에 수정하거나 삭제할 수 없습니다.
+솔루션 설계자는 이 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q53[]" value="A">	A. 업로드된 문서를 S3 버전 관리 및 S3 객체 잠금이 활성화된 Amazon S3 버킷에 저장합니다.	<br></label>
+<label><input type="checkbox" name="q53[]" value="B">	B. 업로드된 문서를 Amazon S3 버킷에 저장합니다. 문서를 주기적으로 보관하도록 S3 수명 주기 정책을 구성합니다.	<br></label>
+<label><input type="checkbox" name="q53[]" value="C">	C. 업로드된 문서를 S3 버전 관리가 활성화된 Amazon S3 버킷에 저장합니다. 모든 액세스를 읽기 전용으로 제한하도록 ACL을 구성합니다.	<br></label>
+<label><input type="checkbox" name="q53[]" value="D">	D. 업로드된 문서를 Amazon Elastic File System(Amazon EFS) 볼륨에 저장합니다. 읽기 전용 모드에서 볼륨을 마운트하여 데이터에 액세스합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q54. 회사에 VPC의 Amazon EC2 인스턴스에서 실행되는 애플리케이션이 있습니다. 애플리케이션 중 하나는 Amazon S3 API를 호출하여 객체를 저장하고 읽어야 합니다. 회사의 보안 정책은 응용 프로그램의 인터넷 바인딩 트래픽을 제한합니다.
+이러한 요구 사항을 충족하고 보안을 유지하는 작업은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q54[]" value="A">	A. S3 인터페이스 끝점을 구성합니다.	<br></label>
+<label><input type="checkbox" name="q54[]" value="B">	B. S3 게이트웨이 엔드포인트를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q54[]" value="C">	C. 프라이빗 서브넷에 S3 버킷을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q54[]" value="D">	D. EC2 인스턴스와 동일한 리전에 S3 버킷을 생성합니다.	<br></label>
+</fieldset>	
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q55. AWS에서 웹 애플리케이션을 호스팅하는 회사는 모든 Amazon EC2 인스턴스, Amazon RDS DB 인스턴스 및 Amazon Redshift 클러스터가 태그로 구성되었는지 확인하려고 합니다. 회사는 이 검사를 구성하고 운영하는 노력을 최소화하기를 원합니다.
+솔루션 설계자는 이를 달성하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q55[]" value="A">	A. AWS Config 규칙을 사용하여 적절하게 태그가 지정되지 않은 리소스를 정의하고 감지합니다.	<br></label>
+<label><input type="checkbox" name="q55[]" value="B">	B. 비용 탐색기를 사용하여 제대로 태그가 지정되지 않은 리소스를 표시합니다. 해당 리소스에 수동으로 태그를 지정합니다.	<br></label>
+<label><input type="checkbox" name="q55[]" value="C">	C. 적절한 태그 할당을 위해 모든 리소스를 확인하는 API 호출을 작성합니다. EC2 인스턴스에서 주기적으로 코드를 실행합니다.	<br></label>
+<label><input type="checkbox" name="q55[]" value="D">	D. 적절한 태그 할당을 위해 모든 리소스를 확인하는 API 호출을 작성합니다. Amazon CloudWatch를 통해 AWS Lambda 함수를 예약하여 코드를 주기적으로 실행합니다.	<br></label>
+</fieldset>			
+
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q56. 회사에 1,000개의 Amazon EC2 Linux 인스턴스에서 실행되는 프로덕션 워크로드가 있습니다. 워크로드는 타사 소프트웨어에 의해 구동됩니다. 회사는 중요한 보안 취약성을 수정하기 위해 가능한 한 빨리 모든 EC2 인스턴스에서 타사 소프트웨어를 패치해야 합니다.
+솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q56[]" value="A">	A. AWS Lambda 함수를 생성하여 모든 EC2 인스턴스에 패치를 적용합니다.	<br></label>
+<label><input type="checkbox" name="q56[]" value="B">	B. 모든 EC2 인스턴스에 패치를 적용하도록 AWS Systems Manager Patch Manager를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q56[]" value="C">	C. AWS Systems Manager 유지 관리 기간을 예약하여 모든 EC2 인스턴스에 패치를 적용합니다.	<br></label>
+<label><input type="checkbox" name="q56[]" value="D">	D. AWS Systems Manager Run Command를 사용하여 모든 EC2 인스턴스에 패치를 적용하는 사용자 지정 명령을 실행합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q57. 회사는 온프레미스에서 Oracle 데이터베이스를 실행합니다. 회사는 AWS로 마이그레이션하는 과정에서 데이터베이스를 사용 가능한 최신 버전으로 업그레이드하려고 합니다. 회사는 또한 데이터베이스에 대한 재해 복구(DR)를 설정하려고 합니다. 회사는 정상 운영 및 DR 설정을 위한 운영 오버헤드를 최소화해야 합니다. 회사는 또한 데이터베이스의 기본 운영 체제에 대한 액세스를 유지 관리해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q57[]" value="A">	A. Oracle 데이터베이스를 Amazon EC2 인스턴스로 마이그레이션합니다. 다른 AWS 리전으로 데이터베이스 복제를 설정합니다.	<br></label>
+<label><input type="checkbox" name="q57[]" value="B">	B. Oracle 데이터베이스를 Oracle용 Amazon RDS로 마이그레이션합니다. 교차 리전 자동 백업을 활성화하여 다른 AWS 리전에 스냅샷을 복제합니다.	<br></label>
+<label><input type="checkbox" name="q57[]" value="C">	C. Oracle 데이터베이스를 Oracle용 Amazon RDS Custom으로 마이그레이션합니다. 다른 AWS 리전의 데이터베이스에 대한 읽기 전용 복제본을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q57[]" value="D">	D. Oracle 데이터베이스를 Oracle용 Amazon RDS로 마이그레이션합니다. 다른 가용 영역에 대기 데이터베이스를 생성합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q58. 회사에서 데이터를 Amazon S3 버킷으로 이동할 계획입니다. 데이터는 S3 버킷에 저장될 때 암호화되어야 합니다. 또한 암호화 키는 매년 자동으로 교체되어야 합니다.
+최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?	</legend></br>
+<label><input type="checkbox" name="q58[]" value="A">	A. 데이터를 S3 버킷으로 이동합니다. Amazon S3 관리형 암호화 키(SSE-S3)로 서버 측 암호화를 사용합니다. SSE-S3 암호화 키의 기본 제공 키 회전 동작을 사용합니다.	<br></label>
+<label><input type="checkbox" name="q58[]" value="B">	B. AWS Key Management Service(AWS KMS) 고객 관리형 키를 생성합니다. 자동 키 회전을 활성화합니다. 고객 관리형 KMS 키를 사용하도록 S3 버킷의 기본 암호화 동작을 설정합니다. 데이터를 S3 버킷으로 이동합니다.	<br></label>
+<label><input type="checkbox" name="q58[]" value="C">	C. AWS Key Management Service(AWS KMS) 고객 관리형 키를 생성합니다. 고객 관리형 KMS 키를 사용하도록 S3 버킷의 기본 암호화 동작을 설정합니다. 데이터를 S3 버킷으로 이동합니다. 매년 KMS 키 수동 순환	<br></label>
+<label><input type="checkbox" name="q58[]" value="D">	D. 데이터를 S3 버킷으로 이동하기 전에 고객 키 자료로 데이터를 암호화합니다. 키 구성 요소 없이 AWS Key Management Service(AWS KMS) 키를 생성합니다. 고객 키 자료를 KMS 키로 가져옵니다. 자동 키 회전을 활성화합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q59. 회사에서 AWS 클라우드의 컨테이너에서 애플리케이션을 실행하려고 합니다. 이러한 애플리케이션은 상태 비저장이며 기본 인프라 내에서 중단을 허용할 수 있습니다. 회사는 비용과 운영 오버헤드를 최소화하는 솔루션이 필요합니다.
+솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q59[]" value="A">	A. Amazon EC2 Auto Scaling 그룹의 스팟 인스턴스를 사용하여 애플리케이션 컨테이너를 실행합니다.	<br></label>
+<label><input type="checkbox" name="q59[]" value="B">	B. Amazon Elastic Kubernetes Service(Amazon EKS) 관리형 노드 그룹에서 스팟 인스턴스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q59[]" value="C">	C. Amazon EC2 Auto Scaling 그룹의 온디맨드 인스턴스를 사용하여 애플리케이션 컨테이너를 실행합니다.	<br></label>
+<label><input type="checkbox" name="q59[]" value="D">	D. Amazon Elastic Kubernetes Service(Amazon EKS) 관리형 노드 그룹에서 온디맨드 인스턴스를 사용합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q60. 회사는 300개 이상의 글로벌 웹사이트 및 애플리케이션을 호스팅합니다. 이 회사는 매일 30TB 이상의 클릭스트림 데이터를 분석할 플랫폼이 필요합니다.
+솔루션 설계자는 클릭스트림 데이터를 전송하고 처리하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q60[]" value="A">	A. AWS Data Pipeline을 설계하여 데이터를 Amazon S3 버킷에 보관하고 데이터로 Amazon EMR 클러스터를 실행하여 분석을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q60[]" value="B">	B. Amazon EC2 인스턴스의 Auto Scaling 그룹을 생성하여 데이터를 처리하고 Amazon Redshift가 분석에 사용할 수 있도록 Amazon S3 데이터 레이크로 보냅니다.	<br></label>
+<label><input type="checkbox" name="q60[]" value="C">	C. 데이터를 Amazon CloudFront에 캐시합니다. Amazon S3 버킷에 데이터를 저장합니다. 객체가 S3 버킷에 추가되면 AWS Lambda 함수를 실행하여 분석할 데이터를 처리합니다.	<br></label>
+<label><input type="checkbox" name="q60[]" value="D">	D. Amazon Kinesis Data Streams에서 데이터를 수집합니다. Amazon Kinesis Data Firehose를 사용하여 Amazon S3 데이터 레이크로 데이터를 전송합니다. 분석을 위해 Amazon Redshift에 데이터를 로드합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q61. 회사에는 매일 1TB의 상태 알림을 집합적으로 생성하는 수천 개의 에지 장치가 있습니다. 각 경고의 크기는 약 2KB입니다. 솔루션 설계자는 향후 분석을 위해 경고를 수집하고 저장하는 솔루션을 구현해야 합니다. 회사는 고가용성 솔루션을 원합니다. 그러나 회사는 비용을 최소화해야 하며 추가 인프라 관리를 원하지 않습니다. 또한 회사는 즉각적인 분석을 위해 14일 동안의 데이터를 유지하고 14일이 지난 데이터를 보관하기를 원합니다.
+이러한 요구 사항을 충족하는 가장 운영 효율성이 높은 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q61[]" value="A">	A. Amazon Kinesis Data Firehose 전송 스트림을 생성하여 알림을 수집합니다. Amazon S3 버킷에 알림을 전달하도록 Kinesis Data Firehose 스트림을 구성합니다. 14일 후에 데이터를 Amazon S3 Glacier로 전환하도록 S3 수명 주기 구성을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q61[]" value="B">	B. 두 가용 영역에서 Amazon EC2 인스턴스를 시작하고 Elastic Load Balancer 뒤에 배치하여 알림을 수집합니다. Amazon S3 버킷에 경고를 저장할 EC2 인스턴스에 대한 스크립트를 생성합니다. 14일 후에 데이터를 Amazon S3 Glacier로 전환하도록 S3 수명 주기 구성을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q61[]" value="C">	C. Amazon Kinesis Data Firehose 전송 스트림을 생성하여 알림을 수집합니다. Amazon Elasticsearch Service(Amazon ES) 클러스터에 알림을 전달하도록 Kinesis Data Firehose 스트림을 구성합니다. Amazon ES 클러스터를 설정하여 매일 수동 스냅샷을 생성하고 클러스터에서 14일이 지난 데이터를 삭제합니다.	<br></label>
+<label><input type="checkbox" name="q61[]" value="D">	D. Amazon Simple Queue Service(Amazon SQS) 표준 대기열을 생성하여 알림을 수집하고 메시지 보존 기간을 14일로 설정합니다. SQS 대기열을 폴링하고, 메시지의 수명을 확인하고, 필요에 따라 메시지 데이터를 분석하도록 소비자를 구성합니다. 메시지가 14일이 지난 경우 소비자는 메시지를 Amazon S3 버킷에 복사하고 SQS 대기열에서 메시지를 삭제해야 합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q62. 회사는 AWS에서 데이터 레이크를 호스팅합니다. 데이터 레이크는 Amazon S3 및 PostgreSQL용 Amazon RDS의 데이터로 구성됩니다. 이 회사는 데이터 시각화를 제공하고 데이터 레이크 내의 모든 데이터 소스를 포함하는 보고 솔루션이 필요합니다. 회사의 관리 팀만 모든 시각화에 대한 전체 액세스 권한을 가져야 합니다. 나머지 회사는 제한된 액세스 권한만 가져야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q62[]" value="A">	A. Amazon QuickSight에서 분석을 생성합니다. 모든 데이터 소스를 연결하고 새 데이터 세트를 만듭니다. 대시보드를 게시하여 데이터를 시각화합니다. 적절한 IAM 역할과 대시보드를 공유합니다.	<br></label>
+<label><input type="checkbox" name="q62[]" value="B">	B. Amazon OuickSighl에서 분석을 생성합니다. 모든 데이터 소스를 연결하고 새 데이터 세트를 만듭니다. 대시보드를 게시하여 데이터를 시각화합니다. 적절한 사용자 및 그룹과 대시보드를 공유합니다.	<br></label>
+<label><input type="checkbox" name="q62[]" value="C">	C. Amazon S3의 데이터에 대한 AWS Glue 테이블 및 크롤러를 생성합니다. AWS Glue 추출, 변환 및 로드(ETL) 작업을 생성하여 보고서를 생성합니다. 보고서를 Amazon S3에 게시합니다. S3 버킷 정책을 사용하여 보고서에 대한 액세스를 제한합니다.	<br></label>
+<label><input type="checkbox" name="q62[]" value="D">	D. Amazon S3의 데이터에 대한 AWS Glue 테이블과 크롤러를 생성합니다. Amazon Athena 연합 쿼리를 사용하여 PoslgreSQL용 Amazon RDS 내의 데이터에 액세스합니다. Amazon Athena를 사용하여 보고서를 생성합니다. 보고서를 Amazon S3에 게시합니다. S3 버킷 정책을 사용하여 보고서에 대한 액세스를 제한합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q63. 이미지 처리 회사에는 사용자가 이미지를 업로드하는 데 사용하는 웹 응용 프로그램이 있습니다. 애플리케이션은 이미지를 Amazon S3 버킷에 업로드합니다. 회사는 객체 생성 이벤트를 Amazon Simple Queue Service(Amazon SQS) 표준 대기열에 게시하도록 S3 이벤트 알림을 설정했습니다. SQS 대기열은 이미지를 처리하고 결과를 이메일을 통해 사용자에게 보내는 AWS Lambda 함수의 이벤트 소스 역할을 합니다.
+사용자는 업로드된 모든 이미지에 대해 여러 이메일 메시지를 수신하고 있다고 보고합니다. 솔루션 설계자는 SQS 메시지가 Lambda 함수를 두 번 이상 호출하여 여러 이메일 메시지를 생성한다고 판단합니다.
+솔루션 설계자는 이 문제를 최소한의 운영 오버헤드로 해결하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q63[]" value="A">	A. ReceiveMessage 대기 시간을 30초로 늘려 SQS 대기열에서 긴 폴링을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q63[]" value="B">	B. SQS 표준 대기열을 SQS FIFO 대기열로 변경합니다. 메시지 중복 제거 ID를 사용하여 중복 메시지를 버리십시오.	<br></label>
+<label><input type="checkbox" name="q63[]" value="C">	C. SQS 대기열의 가시성 제한 시간을 함수 제한 시간과 일괄 처리 창 제한 시간의 합계보다 큰 값으로 늘립니다.	<br></label>
+<label><input type="checkbox" name="q63[]" value="D">	D. 처리 전에 메시지를 읽은 직후 SQS 대기열에서 각 메시지를 삭제하도록 Lambda 함수를 수정합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q64. 회사는 AWS에서 OLTP(온라인 트랜잭션 처리: online transaction processing) 워크로드를 실행하고 있습니다. 이 워크로드는 다중 AZ 배포에서 암호화되지 않은 Amazon RDS DB 인스턴스를 사용합니다. 일일 데이터베이스 스냅샷은 이 인스턴스에서 가져옵니다.
+데이터베이스와 스냅샷이 앞으로 항상 암호화되도록 하려면 솔루션 설계자가 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q64[]" value="A">	A. 최신 DB 스냅샷 사본을 암호화합니다. 암호화된 스냅샷을 복원하여 기존 DB 인스턴스를 교체합니다.	<br></label>
+<label><input type="checkbox" name="q64[]" value="B">	B. 새 암호화된 Amazon Elastic Block Store(Amazon EBS) 볼륨을 생성하고 여기에 스냅샷을 복사합니다. DB 인스턴스에서 암호화를 활성화합니다.	<br></label>
+<label><input type="checkbox" name="q64[]" value="C">	C. 스냅샷을 복사하고 AWS Key Management Service(AWS KMS)를 사용하여 암호화를 활성화합니다. 암호화된 스냅샷을 기존 DB 인스턴스로 복원합니다.	<br></label>
+<label><input type="checkbox" name="q64[]" value="D">	D. AWS Key Management Service(AWS KMS) 관리형 키(SSE-KMS)로 서버 측 암호화를 사용하여 암호화된 Amazon S3 버킷에 스냅샷을 복사합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q65. 설문 조사 회사는 미국 지역에서 수년 동안 데이터를 수집했습니다. 이 회사는 크기가 3TB이고 계속 증가하는 Amazon S3 버킷에 데이터를 호스팅합니다. 이 회사는 S3 버킷이 있는 유럽 마케팅 회사와 데이터를 공유하기 시작했습니다. 회사는 데이터 전송 비용이 가능한 한 낮게 유지되기를 원합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q65[]" value="A">	A. 회사의 S3 버킷에서 요청자 지불 기능을 구성합니다.	<br></label>
+<label><input type="checkbox" name="q65[]" value="B">	B. 회사의 S3 버킷에서 마케팅 회사의 S3 버킷 중 하나로 S3 교차 리전 복제를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q65[]" value="C">	C. 마케팅 회사가 회사의 S3 버킷에 액세스할 수 있도록 마케팅 회사에 대한 교차 계정 액세스를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q65[]" value="D">	D. S3 Intelligent-Tiering을 사용하도록 회사의 S3 버킷을 구성합니다. S3 버킷을 마케팅 회사의 S3 버킷 중 하나와 동기화합니다.	<br></label>
+</fieldset>		
+
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q66. 회사는 Application Load Balancer 뒤의 Amazon EC2 인스턴스에서 비즈니스 크리티컬 웹 애플리케이션을 실행하고 있습니다. EC2 인스턴스는 Auto Scaling 그룹에 있습니다. 애플리케이션은 단일 가용 영역에 배포된 Amazon Aurora PostgreSQL 데이터베이스를 사용합니다. 회사는 다운타임과 데이터 손실을 최소화하면서 애플리케이션의 고가용성을 원합니다.
+최소한의 운영 노력으로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q66[]" value="A">	A. EC2 인스턴스를 다른 AWS 리전에 배치합니다. Amazon Route 53 상태 확인을 사용하여 트래픽을 리디렉션합니다. Aurora PostgreSQL 교차 리전 복제를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q66[]" value="B">	B. 여러 가용 영역을 사용하도록 Auto Scaling 그룹을 구성합니다. 데이터베이스를 다중 AZ로 구성합니다. 데이터베이스에 대한 Amazon RDS 프록시 인스턴스를 구성합니다.	<br></label>
+<label><input type="checkbox" name="q66[]" value="C">	C. 하나의 가용 영역을 사용하도록 Auto Scaling 그룹을 구성합니다. 데이터베이스의 시간별 스냅샷을 생성합니다. 장애가 발생한 경우 스냅샷에서 데이터베이스를 복구합니다.	<br></label>
+<label><input type="checkbox" name="q66[]" value="D">	D. 여러 AWS 리전을 사용하도록 Auto Scaling 그룹을 구성합니다. 애플리케이션의 데이터를 Amazon S3에 씁니다. S3 이벤트 알림을 사용하여 AWS Lambda 함수를 시작하여 데이터베이스에 데이터를 씁니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q67. 회사는 Amazon S3에 데이터를 저장해야 하며 데이터가 변경되지 않도록 해야 합니다. 회사는 Amazon S3에 업로드된 새 객체가 회사가 객체를 수정하기로 결정할 때까지 일정하지 않은 시간 동안 변경할 수 없는 상태로 유지되기를 원합니다. 회사 AWS 계정의 특정 사용자만 객체를 삭제할 수 있습니다.
+솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q67[]" value="A">	A. S3 Glacier 볼트 생성 WORM(Write-Once, Read-Many) 볼트 잠금 정책을 객체에 적용합니다.	<br></label>
+<label><input type="checkbox" name="q67[]" value="B">	B. S3 객체 잠금이 활성화된 S3 버킷 생성 버전 관리 활성화 보존 기간을 100년으로 설정합니다. 거버넌스 모드를 새 객체에 대한 S3 버킷의 기본 보존 모드로 사용합니다.	<br></label>
+<label><input type="checkbox" name="q67[]" value="C">	C. S3 버킷을 생성합니다. AWS CloudTrail을 사용하여 객체를 수정하는 모든 S3 API 이벤트를 추적합니다. 통지 시 회사가 보유한 모든 백업 버전에서 수정된 개체를 복원합니다.	<br></label>
+<label><input type="checkbox" name="q67[]" value="D">	D. S3 객체 잠금이 활성화된 S3 버킷 생성 버전 관리 활성화 객체에 법적 보존 추가 객체를 삭제해야 하는 사용자의 IAM 정책에 s3 PutObjectLegalHold 권한을 추가합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q68. 솔루션 설계자는 회사가 AWS에서 애플리케이션을 실행하는 비용을 최적화할 수 있도록 도와야 합니다. 애플리케이션은 아키텍처 내 컴퓨팅을 위해 Amazon EC2 인스턴스, AWS Fargate 및 AWS Lambda를 사용합니다. EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합니다. EC2 사용은 산발적이고 예측할 수 없습니다. EC2 인스턴스에서 실행되는 워크로드는 언제든지 중단될 수 있습니다. 애플리케이션 프런트 엔드는 Fargate에서 실행되고 Lambda는 API 계층을 제공합니다. 프론트엔드 활용도와 API 계층 활용도는 내년에 예측할 수 있습니다.
+이 애플리케이션을 호스팅하는 데 가장 비용 효율적인 솔루션을 제공하는 구매 옵션 조합은 무엇입니까? (2개를 선택하세요.)</legend></br>
+<label><input type="checkbox" name="q68[]" value="A">	A. 데이터 수집 계층에 스팟 인스턴스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q68[]" value="B">	B. 데이터 수집 계층에 대해 온디맨드 인스턴스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q68[]" value="C">	C. 프런트 엔드 및 API 계층에 대한 1년 Compute Savings Plan을 구매합니다.	<br></label>
+<label><input type="checkbox" name="q68[]" value="D">	D. 데이터 수집 계층에 대한 1년 전체 선결제 예약 인스턴스를 구매합니다.	<br></label>
+<label><input type="checkbox" name="q68[]" value="E">	E. 프런트 엔드 및 API 계층을 위한 1년 EC2 인스턴스 Savings Plan을 구매합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q69. 회사는 us-east-1 리전 내의 3개의 개별 VPC에서 여러 비즈니스 애플리케이션을 실행하고 있습니다. 애플리케이션은 VPC 간에 통신할 수 있어야 합니다. 또한 애플리케이션은 단일 온프레미스 데이터 센터에서 실행되는 지연 시간에 민감한 애플리케이션에 매일 수백 기가바이트의 데이터를 일관되게 보낼 수 있어야 합니다. 솔루션 설계자는 비용 효율성을 극대화하는 네트워크 연결 솔루션을 설계해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q69[]" value="A">	A. 데이터 센터에서 AWS로 3개의 AWS Site-to-Site VPN 연결을 구성합니다. 각 VPC에 대해 하나의 VPN 연결을 구성하여 연결을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q69[]" value="B">	B. 각 VPC에서 타사 가상 네트워크 어플라이언스를 시작합니다. 데이터 센터와 각 가상 어플라이언스 간에 IPsec VPN 터널을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q69[]" value="C">	C. 데이터 센터에서 us-east-1의 Direct Connect 게이트웨이로 3개의 AWS Direct Connect 연결을 설정합니다. Direct Connect 연결 중 하나를 사용하도록 각 VPC를 구성하여 연결을 설정합니다.	<br></label>
+<label><input type="checkbox" name="q69[]" value="D">	D. 데이터 센터에서 AWS로 하나의 AWS Direct Connect 연결을 설정합니다. 전송 게이트웨이를 생성하고 각 VPC를 전송 게이트웨이에 연결합니다. Direct Connect 연결과 전송 게이트웨이 간의 연결을 설정합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q70. 한 회사가 AWS 클라우드에서 공개 웹 애플리케이션 출시를 준비하고 있습니다. 아키텍처는 Elastic Load Balancer(ELB) 뒤의 VPC 내 Amazon EC2 인스턴스로 구성됩니다. DNS에는 타사 서비스가 사용됩니다. 회사의 솔루션 설계자는 대규모 DDoS 공격을 감지하고 보호할 솔루션을 권장해야 합니다.
+어떤 솔루션이 이러한 요구 사항을 충족합니까?</legend></br>
+<label><input type="checkbox" name="q70[]" value="A">	A. 계정에서 Amazon GuardDuty를 활성화합니다.	<br></label>
+<label><input type="checkbox" name="q70[]" value="B">	B. EC2 인스턴스에서 Amazon Inspector를 활성화합니다.	<br></label>
+<label><input type="checkbox" name="q70[]" value="C">	C. AWS Shield를 활성화하고 여기에 Amazon Route 53을 할당합니다.	<br></label>
+<label><input type="checkbox" name="q70[]" value="D">	D. AWS Shield Advanced를 활성화하고 ELB를 할당합니다.	<br></label>
+</fieldset>		
+
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q71. 회사에 매장에 마케팅 서비스를 제공하는 애플리케이션이 있습니다. 매장 고객의 이전 구매를 기반으로 하는 서비스입니다. 상점은 SFTP를 통해 거래 데이터를 회사에 업로드하고 데이터를 처리 및 분석하여 새로운 마케팅 제안을 생성합니다. 일부 파일의 크기는 200GB를 초과할 수 있습니다. 최근에 회사는 일부 상점에서 포함되어서는 안 되는 개인 식별 정보(PII)가 포함된 파일을 업로드했음을 발견했습니다. 회사는 PII가 다시 공유될 경우 관리자에게 경고를 주기를 원합니다. 회사는 또한 문제 해결을 자동화하기를 원합니다.
+최소한의 개발 노력으로 이러한 요구 사항을 충족하기 위해 솔루션 설계자는 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q71[]" value="A">	A. Amazon S3 버킷을 보안 전송 지점으로 사용하십시오. Amazon Inspector를 사용하여 버킷의 객체를 스캔합니다. 객체에 PII가 포함된 경우 S3 수명 주기 정책을 트리거하여 PII가 포함된 객체를 제거합니다.	<br></label>
+<label><input type="checkbox" name="q71[]" value="B">	B. Amazon S3 버킷을 보안 전송 지점으로 사용합니다. Amazon Macie를 사용하여 버킷의 객체를 스캔합니다. 객체에 PII가 포함된 경우 Amazon Simple Notification Service(Amazon SNS)를 사용하여 관리자에게 PII가 포함된 객체를 제거하라는 알림을 트리거합니다.	<br></label>
+<label><input type="checkbox" name="q71[]" value="C">	C. AWS Lambda 함수에서 사용자 지정 스캔 알고리즘을 구현합니다. 객체가 버킷에 로드될 때 함수를 트리거합니다. 객체에 PII가 포함된 경우 Amazon Simple Notification Service(Amazon SNS)를 사용하여 관리자에게 PII가 포함된 객체를 제거하라는 알림을 트리거합니다.	<br></label>
+<label><input type="checkbox" name="q71[]" value="D">	D. AWS Lambda 함수에서 사용자 지정 스캔 알고리즘을 구현합니다. 객체가 버킷에 로드될 때 함수를 트리거합니다. 객체에 PII가 포함된 경우 Amazon Simple Email Service(Amazon SES)를 사용하여 관리자에게 알림을 트리거하고 S3 수명 주기 정책을 트리거하여 PII가 포함된 객체를 제거합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q72. 글로벌 회사는 Amazon API Gateway를 사용하여 us-east-1 리전 및 ap-southeast-2 리전의 로열티 클럽 사용자를 위한 REST API를 설계하고 있습니다. 솔루션 설계자는 SQL 주입 및 교차 사이트 스크립팅 공격으로부터 여러 계정에서 이러한 API Gateway 관리 REST API를 보호하는 솔루션을 설계해야 합니다.
+최소한의 관리 노력으로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q72[]" value="A">	A. 두 리전에 AWS WAF를 설정하고 리전 웹 ACL을 API 단계와 연결합니다.	<br></label>
+<label><input type="checkbox" name="q72[]" value="B">	B. 두 리전에 AWS Firewall Manager를 설정합니다. AWS WAF 규칙을 중앙에서 구성합니다.	<br></label>
+<label><input type="checkbox" name="q72[]" value="C">	C. 두 리전에 AWS Shield를 설정합니다. 리전 웹 ACL을 API 단계와 연결합니다.	<br></label>
+<label><input type="checkbox" name="q72[]" value="D">	D. 한 리전에서 AWS Shield를 설정합니다. 리전 웹 ACL을 API 단계와 연결합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q73. 회사는 AWS 클라우드 배포를 검토하여 Amazon S3 버킷에 무단 구성 변경이 없는지 확인해야 합니다.
+솔루션 설계자는 이 목표를 달성하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q73[]" value="A">	A. 적절한 규칙으로 AWS Config를 켭니다.	<br></label>
+<label><input type="checkbox" name="q73[]" value="B">	B. 적절한 검사를 통해 AWS Trusted Advisor를 켭니다.	<br></label>
+<label><input type="checkbox" name="q73[]" value="C">	C. 적절한 평가 템플릿으로 Amazon Inspector를 켭니다.	<br></label>
+<label><input type="checkbox" name="q73[]" value="D">	D. Amazon S3 서버 액세스 로깅을 켭니다. Amazon EventBridge(Amazon Cloud Watch Events)를 구성합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q74. 애플리케이션은 프라이빗 서브넷의 Amazon EC2 인스턴스에서 실행됩니다. 애플리케이션은 Amazon DynamoDB 테이블에 액세스해야 합니다. 트래픽이 AWS 네트워크를 벗어나지 않도록 하면서 테이블에 액세스하는 가장 안전한 방법은 무엇입니까?</legend></br>
+<label><input type="checkbox" name="q74[]" value="A">	A. DynamoDB용 VPC 엔드포인트를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q74[]" value="B">	B. 퍼블릭 서브넷에서 NAT 게이트웨이를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q74[]" value="C">	C. 프라이빗 서브넷에서 NAT 인스턴스를 사용합니다.	<br></label>
+<label><input type="checkbox" name="q74[]" value="D">	D. VPC에 연결된 인터넷 게이트웨이를 사용합니다.	<br></label>
+</fieldset>		
+
+
+<fieldset class="answer">		
+<legend class="text-justify">Q75. 회사는 Application Load Balancer 뒤의 Amazon EC2 인스턴스에서 글로벌 웹 애플리케이션을 실행합니다. 애플리케이션은 Amazon Aurora에 데이터를 저장합니다. 회사는 재해 복구 솔루션을 만들어야 하며 최대 30분의 가동 중지 시간과 잠재적인 데이터 손실을 견딜 수 있습니다. 솔루션은 기본 인프라가 정상일 때 부하를 처리할 필요가 없습니다.
+솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?</legend></br>
+<label><input type="checkbox" name="q75[]" value="A">	A. 필요한 인프라 요소가 있는 응용 프로그램을 배포합니다. Amazon Route 53을 사용하여 능동-수동 장애 조치를 구성합니다. 두 번째 AWS 리전에서 Aurora 복제본을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q75[]" value="B">	B. 두 번째 AWS 리전에서 애플리케이션의 축소 배포를 호스팅합니다. Amazon Route 53을 사용하여 활성-활성 장애 조치를 구성합니다. 두 번째 리전에서 Aurora 복제본을 생성합니다.	<br></label>
+<label><input type="checkbox" name="q75[]" value="C">	C. 두 번째 AWS 리전에서 기본 인프라를 복제합니다. Amazon Route 53을 사용하여 활성-활성 장애 조치를 구성합니다. 최신 스냅샷에서 복원된 Aurora 데이터베이스를 생성합니다.	<br></label>
+<label><input type="checkbox" name="q75[]" value="D">	D. AWS Backup으로 데이터 백업 백업을 사용하여 두 번째 AWS 리전에 필요한 인프라를 생성합니다. Amazon Route 53을 사용하여 능동-수동 장애 조치를 구성합니다. 두 번째 리전에서 Aurora 두 번째 기본 인스턴스를 생성합니다.	<br></label>
+</fieldset>		
+
+</br></br>
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+</br></br>
+		</br>
+		<input type="button" value="채점" id="submit-button" class="btn btn-primary" style="width: 100%; height: 100px; font-size: 50px;">
+
+		</br></br>
+		<input type="button" value="문제 한번에보기" class="btn btn-info" id="submit-all" style="width: 100%; height: 100px; font-size: 50px;">
+
+		</br></br>
+		<input type="button" value="문제 숨기기" id="submit-hide" class="btn btn-warning" style="width: 100%; height: 100px; font-size: 50px;">
+
+		</br></br></br></br>
+		<select id="page" class="form-control" style="width: 100%; height: 100px; font-size: 50px;">
+			<option value="1">	1	</option>
+			<option value="2">	2	</option>
+			<option value="3">	3	</option>
+			<option value="4">	4	</option>
+			<option value="5">	5	</option>
+			<option value="6">	6	</option>
+			<option value="7">	7	</option>
+			<option value="8">	8	</option>
+			<option value="9">	9	</option>
+			<option value="10">	10	</option>
+			<option value="11">	11	</option>
+			<option value="12">	12	</option>
+			<option value="13">	13	</option>
+			<option value="14">	14	</option>
+			<option value="15">	15	</option>
+			<option value="16">	16	</option>
+			<option value="17">	17	</option>
+			<option value="18">	18	</option>
+			<option value="19">	19	</option>
+			<option value="20">	20	</option>
+			<option value="21">	21	</option>
+			<option value="22">	22	</option>
+			<option value="23">	23	</option>
+			<option value="24">	24	</option>
+			<option value="25">	25	</option>
+			<option value="26">	26	</option>
+			<option value="27">	27	</option>
+			<option value="28">	28	</option>
+			<option value="29">	29	</option>
+			<option value="30">	30	</option>
+			<option value="31">	31	</option>
+			<option value="32">	32	</option>
+			<option value="33">	33	</option>
+			<option value="34">	34	</option>
+			<option value="35">	35	</option>
+			<option value="36">	36	</option>
+			<option value="37">	37	</option>
+			<option value="38">	38	</option>
+			<option value="39">	39	</option>
+			<option value="40">	40	</option>
+			<option value="41">	41	</option>
+			<option value="42">	42	</option>
+			<option value="43">	43	</option>
+			<option value="44">	44	</option>
+			<option value="45">	45	</option>
+			<option value="46">	46	</option>
+			<option value="47">	47	</option>
+			<option value="48">	48	</option>
+			<option value="49">	49	</option>
+			<option value="50">	50	</option>
+			<option value="51">	51	</option>
+			<option value="52">	52	</option>
+			<option value="53">	53	</option>
+			<option value="54">	54	</option>
+			<option value="55">	55	</option>
+			<option value="56">	56	</option>
+			<option value="57">	57	</option>
+			<option value="58">	58	</option>
+			<option value="59">	59	</option>
+			<option value="60">	60	</option>
+			<option value="61">	61	</option>
+			<option value="62">	62	</option>
+			<option value="63">	63	</option>
+			<option value="64">	64	</option>
+			<option value="65">	65	</option>
+			<option value="66">	66	</option>
+			<option value="67">	67	</option>
+			<option value="68">	68	</option>
+			<option value="69">	69	</option>
+			<option value="70">	70	</option>
+			<option value="71">	71	</option>
+			<option value="72">	72	</option>
+			<option value="73">	73	</option>
+			<option value="74">	74	</option>
+			<option value="75">	75	</option>
+		</select>
+</div>
+
+	</form>
+
+	<p id="result"></p>
+
+	<script>
+
+		$(document).ready(function() {
+
+			$("#submit-all").click(function(){
+				var slides = $('#slider fieldset');
+				slides.show();	
+			});
+
+			$("#submit-hide").click(function() {
+				var slides = $('#slider fieldset');
+				var pages = $('#page').val();
+			    slides.hide();
+			    slides.eq(pages - 1).show();
+
+			});
+
+
+			$("#page").change(function(){
+				var pages = $('#page').val();
+				var slides = $('#slider fieldset');
+				event.preventDefault();
+			  	slides.hide();
+			  	slides.eq(pages - 1).show();
+			  	slideIndex = parseInt(pages);
+			  	
+			});
+
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+
+
+			// 이전/다음 버튼 클릭 이벤트
+			$('.prev').click(function(event) {
+				event.preventDefault();
+			  showSlides(slideIndex -= 1);
+			});
+
+			$('.next').click(function(event) {
+				event.preventDefault();
+			  showSlides(slideIndex += 1);
+			});
+
+			// 이미지 슬라이드 함수
+			function showSlides(n) {
+				$("#page").val(n+"");
+			  var slides = $('#slider fieldset');
+
+			  // 마지막 이미지에서 다음 버튼을 누르면 첫 번째 이미지로 이동
+			  if (n > slides.length) {
+			    slideIndex = 1;
+			  }
+
+			  // 첫 번째 이미지에서 이전 버튼을 누르면 마지막 이미지로 이동
+			  if (n < 1) {
+			    slideIndex = slides.length;
+			  }
+
+			  // 모든 이미지를 숨기고 현재 이미지만 보이도록 함
+			  slides.hide();
+			  slides.eq(slideIndex - 1).show();
+			}
+
+
+		});
+
+
+
+		const submitButton = document.getElementById('submit-button');
+		submitButton.addEventListener('click', checkAnswers);
+
+		function checkAnswers() {
+
+
+
+
+			// 각 문항의 정답
+			const answers = [
+				["C"], ["A"], ["D"], ["B"], ["C"],
+				["D"], ["D"], ["D"], ["A","E"], ["A"],
+				["A"], ["B"], ["D"], ["C"], ["A"],
+				["D"], ["A","C"], ["C"], ["D"], ["A"],
+				["C"], ["A"], ["A"], ["C"], ["C", "E"],
+				["A"], ["A", "C"], ["B"], ["D"], ["B"],
+				["A"], ["A", "E"], ["B"], ["C"], ["D", "E"],
+				["A", "B"], ["A", "C"], ["A", "B"], ["D"], ["D"],
+				["A"], ["D"], ["C"], ["C"], ["A"],
+				["C"], ["D"], ["C"], ["D"], ["B"],
+				["A"], ["B"], ["A"], ["A"], ["A"],
+				["D"], ["D"], ["B"], ["B"], ["D"],
+				["A"], ["D"], ["A"], ["A"], ["A"],
+				["B"], ["D"], ["A", "C"], ["D"], ["D"],
+				["B"], ["A"], ["A"], ["A"], ["C"],
+			];
+
+
+			// // 정답 개수 초기화
+			let correctAnswers = 0;
+
+
+			const elements = document.querySelectorAll('.correct');
+			elements.forEach(element => {
+			  element.classList.remove('correct');
+			});
+
+			const elements2 = document.querySelectorAll('.incorrect');
+			elements2.forEach(element => {
+			  element.classList.remove('incorrect');
+			});
+
+
+
+			const answerContainers = document.querySelectorAll(".answer");
+
+		  	answerContainers.forEach((container, index) => {
+			    const checkboxes = container.querySelectorAll("input[type='checkbox']");
+			    const userAnswers = [];
+
+			    checkboxes.forEach((checkbox) => {
+			      if (checkbox.checked) {
+			        userAnswers.push(checkbox.value);
+			      }
+			    });
+
+			    const isCorrect = answers[index].every(
+			      (answer) => userAnswers.indexOf(answer) !== -1
+			    );
+
+			    if (isCorrect) {
+			      container.classList.add("correct");
+			      correctAnswers++;
+			    } else {
+			      container.classList.add("incorrect");
+			    }
+		  	});
+		
+
+			// 결과 출력
+			document.getElementById('result').textContent = '당신은 ' + correctAnswers + '개의 문제를 맞췄습니다.';
+		}
+	</script>
+</body>
+</html>
